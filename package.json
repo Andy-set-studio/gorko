@@ -1,0 +1,21 @@
+{
+  "name": "gorko",
+  "version": "0.1.0",
+  "description": "A tiny Sass token class generator.",
+  "main": "gorko.scss",
+  "dependencies": {
+    "sass": "^1.26.5"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hankchizljaw/gorko.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hankchizljaw/gorko/issues"
+  },
+  "homepage": "https://github.com/hankchizljaw/gorko#readme"
+}
