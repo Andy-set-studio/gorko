@@ -1,0 +1,14 @@
+@import 'workers/cycle';
+
+// Run the standard cycle first
+@include cycle('', false);
+
+// For each breakpoint, generate a prefix and run the cycle
+@each $key, $value in map-get($gorko-config, 'breakpoints') {
+  $prefix: #{$key + '\\:'};
+  $is-breakpoint: true;
+
+  @media screen and #{$value} {
+    @include cycle($prefix, $is-breakpoint);
+  }
+}

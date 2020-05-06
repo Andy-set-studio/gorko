@@ -1,0 +1,7 @@
+// Import the default config as the fallback for if
+// the user hasn't yet set a config for their project
+@import './src/default-config';
+
+@import './src/functions/functions';
+@import './src/mixins/mixins';
+@import './src/generator/generator';

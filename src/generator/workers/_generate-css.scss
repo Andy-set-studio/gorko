@@ -1,0 +1,16 @@
+/**
+ * GENERATE CSS MIXIN
+ * The final CSS generator that takes the process params and generates
+ * a CSS utility.
+ *
+ * @param {string} $selector - The CSS selector that should be generated
+ * @param {string} $property - The CSS property that this utility affects
+ * @param {map} $items - The collection of utility items to generate classes for
+ */
+@mixin generate-css($selector, $property, $items) {
+  @each $key, $value in $items {
+    #{'.' + $selector + '-' + $key} {
+      #{ $property }: #{$value};
+    }
+  }
+}

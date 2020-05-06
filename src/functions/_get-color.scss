@@ -1,0 +1,19 @@
+/**
+ * GET COLOR FUNCTION
+ *
+ * Function tries to match the passed $key with the $gorko-colors map. Returns null
+ * if it can’t find a match.
+ *
+ * @param {string} $key - The color that you want to get 
+ */
+@function get-color($key) {
+  $response: map-get($gorko-colors, $key);
+
+  @if ($response) {
+    @return $response;
+  }
+
+  @warn #{'Color "' + $key + '" not found in $gorko-colors'};
+
+  @return null;
+}
