@@ -7,3 +7,4 @@ npm-debug.*
 .sass-cache
 node_modules
 test.html
+tmp

@@ -1,10 +1,13 @@
 {
   "name": "gorko",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A tiny Sass token class generator.",
   "main": "gorko.scss",
   "dependencies": {
     "sass": "^1.26.5"
+  },
+  "scripts": {
+    "test": "npx sass gorko.scss tmp/gorko.css"
   },
   "devDependencies": {},
   "repository": {

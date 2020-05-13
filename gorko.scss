@@ -2,6 +2,9 @@
 // the user hasn't yet set a config for their project
 @import './src/default-config';
 
+// Set default feature flags
+$outputTokenCSS: true !default;
+
 @import './src/functions/functions';
 @import './src/mixins/mixins';
 @import './src/generator/generator';
