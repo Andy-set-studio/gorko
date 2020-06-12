@@ -2,6 +2,40 @@
 
 A tiny, Sass-powered utility class generator, with handy helpers, that helps you to power your front-ends with a single source of truth.
 
+## Table of contents 
+
+- [Gorko](#gorko)
+  * [Getting started](#getting-started)
+  * [Configuration](#configuration)
+    + [`$gorko-base-size` (optional)](#--gorko-base-size---optional-)
+    + [`$gorko-size-scale` (optional)](#--gorko-size-scale---optional-)
+    + [`$gorko-colors` (optional)](#--gorko-colors---optional-)
+    + [`$gorko-config` (required)](#--gorko-config---required-)
+    + [Breakpoints](#breakpoints)
+  * [Utility Class Generator](#utility-class-generator)
+      - [Example outputs](#example-outputs)
+  * [Sass functions](#sass-functions)
+    + [`get-color($key: string)`](#-get-color--key--string--)
+      - [Example](#example)
+    + [get-config-value($key: string, $group: string)](#get-config-value--key--string---group--string-)
+      - [Example](#example-1)
+    + [`get-size($ratio-key: string)`](#-get-size--ratio-key--string--)
+      - [Example](#example-2)
+  * [Sass mixins](#sass-mixins)
+    + [`apply-utility($key: string, $value-key: string)`](#-apply-utility--key--string---value-key--string--)
+      - [Example](#example-3)
+    + [`media-query($key: string)`](#-media-query--key--string--)
+      - [Example](#example-4)
+  * [Contributing](#contributing)
+  * [Pull Request Process](#pull-request-process)
+  * [Code of Conduct](#code-of-conduct)
+    + [Our Pledge](#our-pledge)
+    + [Our Standards](#our-standards)
+    + [Our Responsibilities](#our-responsibilities)
+    + [Scope](#scope)
+    + [Enforcement](#enforcement)
+    + [Attribution](#attribution)
+
 ## Getting started
 
 First up, install Gorko:
