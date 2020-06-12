@@ -1,4 +1,4 @@
-# Gorko 
+# Gorko
 
 A tiny, Sass-powered utility class generator, with handy helpers, that helps you to power your front-ends with a single source of truth.
 
@@ -183,7 +183,7 @@ The base size for the size ratio calculations. It is only required for the defau
 
 ### `$gorko-size-scale` (optional)
 
-This takes the base size and by default, generates a **major third** size scale. This can be set to whatever scale you like. 
+This takes the base size and by default, generates a **major third** size scale. This can be set to whatever scale you like.
 
 If this is not set, the `get-size` function will use the default configuration.
 
@@ -197,13 +197,13 @@ If this is not set, the `get-color` function will use the default configuration.
 
 🚨 Without this set, Gorko won’t work. 🚨
 
-It contains all of the utility class definitions and breakpoint definitions that the generator and mixins use. 
+It contains all of the utility class definitions and breakpoint definitions that the generator and mixins use.
 
 You can add as many or as little utility class definitions as you like—likewise for breakpoint definitions.
 
 ### Breakpoints
 
-The `breakpoints` map in `$gorko-config` defines media queries for the utility class generator. By default, the are set as follows: 
+The `breakpoints` map in `$gorko-config` defines media queries for the utility class generator. By default, the are set as follows:
 
 ```scss
 'breakpoints': (
@@ -215,25 +215,19 @@ The `breakpoints` map in `$gorko-config` defines media queries for the utility c
 
 You can add as many or as little of these as you like and call them whatever you like. The only requirement is that the value is a valid media query.
 
-## Utility Class Generator 
+## Utility Class Generator
 
 The utility class generator loops through `$gorko-config` looking for items that have a valid utility class structure. The following structure is required to generate a utility class:
 
 ```scss
-'width': (
-	'items': (
-	  'full': '100%',
-	  'half': '50%',
+'width':('items':('full':'100%','half': '50%',
 	),
 	'output': 'standard',
 	'property': 'width'
-),
+),;
 ```
 
-The first key is the name of the utility and that contains a Sass map. Inside that map, you need to have the following: 
-	- `items`: a map of key/value pairs which link a utility class to a CSS property’s value
-	- `output`: this must be `responsive` or `standard`. If you set it to `responsive`, it will generate the same utility class for **every breakpoint that is defined**.
-	- `property`: the [CSS property](https://css-tricks.com/almanac/properties/) that this utility controls.
+The first key is the name of the utility and that contains a Sass map. Inside that map, you need to have the following: - `items`: a map of key/value pairs which link a utility class to a CSS property’s value - `output`: this must be `responsive` or `standard`. If you set it to `responsive`, it will generate the same utility class for **every breakpoint that is defined**. - `property`: the [CSS property](https://css-tricks.com/almanac/properties/) that this utility controls.
 
 #### Example outputs
 
@@ -241,11 +235,11 @@ The above structure would output the following utility classes:
 
 ```css
 .width-full {
-	width: 100%;
+  width: 100%;
 }
 
 .width-half {
-	width: 50%
+  width: 50%;
 }
 ```
 
@@ -253,44 +247,44 @@ If we set the `output` to be `responsive`, with the default `breakpoints` define
 
 ```css
 .width-full {
-	width: 100%;
+  width: 100%;
 }
 
 .width-half {
-	width: 50%
+  width: 50%;
 }
 
-@media screen and (min-width:36em){
-	.sm\:width-full {
-		width: 100%;
-	}
-	
-	.sm\:width-half {
-		width: 50%
-	}
+@media screen and (min-width: 36em) {
+  .sm\:width-full {
+    width: 100%;
+  }
+
+  .sm\:width-half {
+    width: 50%;
+  }
 }
 
-@media screen and (min-width:48em){
-	.md\:width-full {
-		width: 100%;
-	}
-	
-	.md\:width-half {
-		width: 50%
-	}
+@media screen and (min-width: 48em) {
+  .md\:width-full {
+    width: 100%;
+  }
+
+  .md\:width-half {
+    width: 50%;
+  }
 }
 
-@media screen and (min-width:62em){
-	.lg\:width-full {
-		width: 100%;
-	}
-	
-	.lg\:width-half {
-		width: 50%
-	}
+@media screen and (min-width: 62em) {
+  .lg\:width-full {
+    width: 100%;
+  }
+
+  .lg\:width-half {
+    width: 50%;
+  }
 }
 ```
- 
+
 ## Sass functions
 
 There are a couple of handy functions that give you access to configuration settings.
@@ -311,9 +305,9 @@ $dark = get-color('dark'); // #1a1a1a
 
 Returns back a 1 dimensional (key value pair) config value if available.
 
-#### Example 
+#### Example
 
-Using the default config: 
+Using the default config:
 
 ```scss
 $light-weight: get-config-value('light', 'weight'); // 300
@@ -323,9 +317,9 @@ $light-weight: get-config-value('light', 'weight'); // 300
 
 Tries to match the passed `$ratio-key` with the `$gorko-size-scale`. Returns null if it can’t find a match.
 
-#### Example 
+#### Example
 
-Using the default config: 
+Using the default config:
 
 ```scss
 $my-size: get-size('500'); // 1.25rem
@@ -335,15 +329,15 @@ $my-size: get-size('500'); // 1.25rem
 
 ### `apply-utility($key: string, $value-key: string)`
 
-Grab the property and value of one of the `$gorko-config` utilities that the generator will generate a class for. 
+Grab the property and value of one of the `$gorko-config` utilities that the generator will generate a class for.
 
 #### Example
 
-Using the default config: 
+Using the default config:
 
 ```scss
 .my-element {
-	@include apply-utility('weight', 'bold'); // font-weight: bold;
+  @include apply-utility('weight', 'bold'); // font-weight: bold;
 }
 ```
 
@@ -351,15 +345,15 @@ Using the default config:
 
 Pass in the key of one of your breakpoints set in `$gorko-config['breakpoints']` and this mixin will generate the media query with your configured value.
 
-#### Example 
+#### Example
 
 Using the default config:
 
 ```scss
 .my-element {
-	@include media-query('md') {
-		background: goldenrod;
-	}
+  @include media-query('md') {
+    background: goldenrod;
+  }
 }
 ```
 
@@ -367,9 +361,9 @@ Output:
 
 ```css
 @media (min-width: 48em) {
-	.my-element {
-		background: goldenrod;
-	}
+  .my-element {
+    background: goldenrod;
+  }
 }
 ```
 
