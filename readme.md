@@ -53,7 +53,7 @@ In your Sass (SCSS in this case), import Gorko like so:
 This will generate utility classes based on the default configuration. To configure it for yourself, take this default, and create your own. Once it is created **import your config before Gorko**, like this:
 
 ```bash
-npm install gorko
+@import 'config';
 ```
 
 ## Configuration
