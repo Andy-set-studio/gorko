@@ -17,7 +17,7 @@ A tiny, Sass-powered utility class generator, with handy helpers, that helps you
   * [Sass functions](#sass-functions)
     + [`get-color($key: string)`](#-get-color--key--string--)
       - [Example](#example)
-    + [get-config-value($key: string, $group: string)](#get-config-value--key--string---group--string-)
+    + [`get-config-value($key: string, $group: string)`](#get-config-value--key--string---group--string-)
       - [Example](#example-1)
     + [`get-size($ratio-key: string)`](#-get-size--ratio-key--string--)
       - [Example](#example-2)
@@ -335,7 +335,7 @@ Using the default config:
 $dark = get-color('dark'); // #1a1a1a
 ```
 
-### get-config-value($key: string, $group: string)
+### `get-config-value($key: string, $group: string)`
 
 Returns back a 1 dimensional (key value pair) config value if available.
 
