@@ -9,7 +9,7 @@
   $group-items: map-get($gorko-config, $group);
 
   @if ($group-items) {
-    @return map-get($group-items, $key);
+    @return map-get(map-get($group-items, 'items'), $key);
   }
 
   @return false;
