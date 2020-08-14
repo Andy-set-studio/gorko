@@ -1,11 +1,10 @@
-/**
- * CYCLE MIXIN
- * A simple worker that loops every element in the config
- * and pushes it into the collection processor
- * 
- * @param {string} $prefix - An optional prefix that is stuck to the front of selectors
- * @param {bool} $is-breakpoint - A flag for the responsive generation to use to determine wether to run or not
- */
+/// CYCLE MIXIN
+/// A simple worker that loops every element in the config
+/// and pushes it into the collection processor
+///
+/// @param {string} $prefix - An optional prefix that is stuck to the front of selectors
+/// @param {bool} $is-breakpoint - A flag for the responsive generation to use to determine wether to run or not
+///
 @import 'process-collection';
 
 @mixin cycle($prefix, $is-breakpoint) {

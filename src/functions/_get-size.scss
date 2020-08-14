@@ -1,11 +1,10 @@
-/**
- * GET SIZE FUNCTION
- *
- * Function tries to match the passed $ratio-key with the $gorko-size-scale. Returns null
- * if it can’t find a match.
- *
- * @param {string} $ratio-key - The size ratio that you want to get 
- */
+/// GET SIZE FUNCTION
+///
+/// Function tries to match the passed $ratio-key with the $gorko-size-scale. Returns null
+/// if it can’t find a match.
+///
+/// @param {string} $ratio-key - The size ratio that you want to get
+///
 @function get-size($ratio-key) {
   $response: map-get($gorko-size-scale, $ratio-key);
 
