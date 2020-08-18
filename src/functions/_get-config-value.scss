@@ -1,10 +1,9 @@
-/**
- * GET CONFIG VALUE FUNCTION
- * Returns back a 1 dimensional (key value pair) config value if available.
- *
- * @param {string} $key - The key of the config value that you want
- * @param {string{ $group - The group within $gorko-config where that $key lives
- */
+/// GET CONFIG VALUE FUNCTION
+/// Returns back a 1 dimensional (key value pair) config value if available.
+///
+/// @param {string} $key - The key of the config value that you want
+/// @param {string} $group - The group within $gorko-config where that $key lives
+///
 @function get-config-value($key, $group) {
   $group-items: map-get($gorko-config, $group);
 

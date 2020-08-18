@@ -2,7 +2,7 @@
 
 A tiny, Sass-powered utility class generator, with handy helpers, that helps you to power your front-ends with a single source of truth.
 
-## Table of contents 
+## Table of contents
 
 - [Gorko](#gorko)
   * [Getting started](#getting-started)
@@ -61,21 +61,19 @@ This will generate utility classes based on the default configuration. To config
 This is the default configuration. It is recommended that you use it as your base for your own configuration.
 
 ```scss
-/**
- * BASE SIZE
- * All calculations are based on this. It’s recommended that
- * you keep it at 1rem because that is the root font size. You
- * can set it to whatever you like and whatever unit you like.
- */
+/// BASE SIZE
+/// All calculations are based on this. It’s recommended that
+/// you keep it at 1rem because that is the root font size. You
+/// can set it to whatever you like and whatever unit you like.
+///
 $gorko-base-size: 1rem !default;
 
-/**
- * SIZE SCALE
- * This is a Major Third scale that powers all the utilities that
- * it is relevant for (font-size, margin, padding). All items are
- * calcuated off the base size, so change that and cascade across
- * your whole project.
- */
+/// SIZE SCALE
+/// This is a Major Third scale that powers all the utilities that
+/// it is relevant for (font-size, margin, padding). All items are
+/// calcuated off the base size, so change that and cascade across
+/// your whole project.
+///
 $gorko-size-scale: (
   '300': $gorko-base-size * 0.8,
   '400': $gorko-base-size,
@@ -85,21 +83,19 @@ $gorko-size-scale: (
   '900': $gorko-base-size * 3
 ) !default;
 
-/**
- * COLORS
- * Colors are shared between backgrounds and text by default. 
- * You can also use them to power borders, fills or shadows, for example.
- */
+/// COLORS
+/// Colors are shared between backgrounds and text by default.
+/// You can also use them to power borders, fills or shadows, for example.
+///
 $gorko-colors: (
   'dark': #1a1a1a,
   'light': #f3f3f3
 ) !default;
 
-/**
- * CORE CONFIG
- * This powers everything from utility class generation to breakpoints
- * to enabling/disabling pre-built components/utilities.
- */
+/// CORE CONFIG
+/// This powers everything from utility class generation to breakpoints
+/// to enabling/disabling pre-built components/utilities.
+///
 $gorko-config: (
   'bg': (
     'items': $gorko-colors,

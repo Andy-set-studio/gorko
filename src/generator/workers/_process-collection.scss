@@ -1,15 +1,13 @@
-/**
- * PROCESS COLLECTION MIXIN
- * Takes a passed collection and finds utility classes to generate. 
- * It’ll loop through breakpoints, too and generate responsive utilities 
- * where required
- *
- * @param {map} $collection - The '$gorko-config' config item 
- * @param {string} $prefix - An optional prefix that is stuck to the front of selectors
- * @param {string} $selector - The CSS selector that should be generated
- * @param {bool} $is-breakpoint - A flag for the responsive generation to use to determine wether to run or not
- */
-
+/// PROCESS COLLECTION MIXIN
+/// Takes a passed collection and finds utility classes to generate.
+/// It’ll loop through breakpoints, too and generate responsive utilities
+/// where required
+///
+/// @param {map} $collection - The '$gorko-config' config item
+/// @param {string} $prefix - An optional prefix that is stuck to the front of selectors
+/// @param {string} $selector - The CSS selector that should be generated
+/// @param {bool} $is-breakpoint - A flag for the responsive generation to use to determine wether to run or not
+///
 @import 'generate-css';
 
 @mixin process-collection($collection, $prefix, $selector, $is-breakpoint) {
@@ -17,7 +15,7 @@
   $output: map-get($collection, 'output');
   $property: map-get($collection, 'property');
 
-  // It'll only run if $items and $property aren't null. This means it'll ignore the breakpoints, for example.
+  /// It'll only run if $items and $property aren't null. This means it'll ignore the breakpoints, for example.
   @if ($property and $items) {
     @if ($output == 'responsive') {
       @include generate-css(#{$prefix + $selector}, $property, $items);
