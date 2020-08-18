@@ -1,6 +1,6 @@
 {
   "name": "gorko",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A tiny Sass token class generator.",
   "main": "gorko.scss",
   "dependencies": {
