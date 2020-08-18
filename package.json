@@ -9,7 +9,9 @@
   "scripts": {
     "test": "npx sass gorko.scss tmp/gorko.css"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "prettier": "^2.0.5"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hankchizljaw/gorko.git"
