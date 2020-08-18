@@ -1,11 +1,10 @@
-/**
- * APPLY UTILITY MIXIN
- * Grab the property and value of one of the $gorko-config utilities
- * that the generator will generate a class for. 
- *
- * @param {string} $key - The configured utility’s key
- * @param {string} $value-key - The value key that you are looking for within the utilty
- */
+/// APPLY UTILITY MIXIN
+/// Grab the property and value of one of the $gorko-config utilities
+/// that the generator will generate a class for.
+///
+/// @param {string} $key - The configured utility’s key
+/// @param {string} $value-key - The value key that you are looking for within the utilty
+///
 @mixin apply-utility($key, $value-key) {
   $utility: map-get($gorko-config, $key);
   $property: map-get($utility, 'property');

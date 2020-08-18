@@ -1,11 +1,11 @@
 @import 'workers/cycle';
 
-// Only run if there should be an output
+/// Only run if there should be an output
 @if ($outputTokenCSS == true) {
-  // Run the standard cycle first
+  /// Run the standard cycle first
   @include cycle('', false);
 
-  // For each breakpoint, generate a prefix and run the cycle
+  /// For each breakpoint, generate a prefix and run the cycle
   @each $key, $value in map-get($gorko-config, 'breakpoints') {
     $prefix: #{$key + '\\:'};
     $is-breakpoint: true;
