@@ -34,15 +34,21 @@ $gorko-colors: (
 /// to enabling/disabling pre-built components/utilities.
 ///
 $gorko-config: (
+  'design-tokens': (
+    'color': $gorko-colors,
+    'size': $gorko-size-scale,
+  ),
   'bg': (
     'items': $gorko-colors,
     'output': 'standard',
-    'property': 'background'
+    'property': 'background',
+    'use-design-token': 'color',
   ),
   'color': (
     'items': $gorko-colors,
     'output': 'standard',
-    'property': 'color'
+    'property': 'color',
+    'use-design-token': 'color',
   ),
   'box': (
     'items': (
@@ -64,42 +70,50 @@ $gorko-config: (
   'gap-top': (
     'items': $gorko-size-scale,
     'output': 'standard',
-    'property': 'margin-top'
+    'property': 'margin-top',
+    'use-design-token': 'size',
   ),
   'gap-right': (
     'items': $gorko-size-scale,
     'output': 'standard',
-    'property': 'margin-right'
+    'property': 'margin-right',
+    'use-design-token': 'size',
   ),
   'gap-bottom': (
     'items': $gorko-size-scale,
     'output': 'standard',
-    'property': 'margin-bottom'
+    'property': 'margin-bottom',
+    'use-design-token': 'size',
   ),
   'gap-left': (
     'items': $gorko-size-scale,
     'output': 'standard',
-    'property': 'margin-left'
+    'property': 'margin-left',
+    'use-design-token': 'size',
   ),
   'pad-top': (
     'items': $gorko-size-scale,
     'output': 'standard',
-    'property': 'padding-top'
+    'property': 'padding-top',
+    'use-design-token': 'size',
   ),
   'pad-right': (
     'items': $gorko-size-scale,
     'output': 'standard',
-    'property': 'padding-right'
+    'property': 'padding-right',
+    'use-design-token': 'size',
   ),
   'pad-bottom': (
     'items': $gorko-size-scale,
     'output': 'standard',
-    'property': 'padding-bottom'
+    'property': 'padding-bottom',
+    'use-design-token': 'size',
   ),
   'pad-left': (
     'items': $gorko-size-scale,
     'output': 'standard',
-    'property': 'padding-left'
+    'property': 'padding-left',
+    'use-design-token': 'size',
   ),
   'stack': (
     'items': (
@@ -115,7 +129,8 @@ $gorko-config: (
   'text': (
     'items': $gorko-size-scale,
     'output': 'responsive',
-    'property': 'font-size'
+    'property': 'font-size',
+    'use-design-token': 'size',
   ),
   'weight': (
     'items': (

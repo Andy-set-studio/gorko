@@ -5,11 +5,16 @@
 /// @param {string} $selector - The CSS selector that should be generated
 /// @param {string} $property - The CSS property that this utility affects
 /// @param {map} $items - The collection of utility items to generate classes for
+/// @param {string} $design-token - The design token key to reference the css variable
 ///
-@mixin generate-css($selector, $property, $items) {
+@mixin generate-css($selector, $property, $items, $design-token) {
   @each $key, $value in $items {
     #{'.' + $selector + '-' + $key} {
-      #{ $property }: #{$value};
+      @if ($design-token) {
+        #{ $property }: var(--#{$design-token + '-' + $key});
+      } @else {
+        #{ $property }: #{$value};
+      }
     }
   }
 }

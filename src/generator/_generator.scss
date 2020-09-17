@@ -2,6 +2,19 @@
 
 /// Only run if there should be an output
 @if ($outputTokenCSS == true) {
+  $design-tokens: map-get($gorko-config, 'design-tokens');
+  
+  @if ($design-tokens) {
+    // Generate custom properties for each design token
+    :root {
+      @each $token, $items in $design-tokens {
+        @each $key, $value in $items {
+          --#{$token + '-' + $key}: #{$value};
+        }
+      }
+    }
+  }
+  
   /// Run the standard cycle first
   @include cycle('', false);
 

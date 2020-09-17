@@ -14,16 +14,17 @@
   $items: map-get($collection, 'items');
   $output: map-get($collection, 'output');
   $property: map-get($collection, 'property');
+  $design-token: map-get($collection, 'use-design-token');
 
-  /// It'll only run if $items and $property aren't null. This means it'll ignore the breakpoints, for example.
+  /// It'll only run if $items and $property aren't null. This means it'll ignore the breakpoints and design tokens, for example.
   @if ($property and $items) {
     @if ($output == 'responsive') {
-      @include generate-css(#{$prefix + $selector}, $property, $items);
+      @include generate-css(#{$prefix + $selector}, $property, $items, $design-token);
     }
 
     @if ($output == 'standard') {
       @if ($is-breakpoint != true) {
-        @include generate-css(#{$prefix + $selector}, $property, $items);
+        @include generate-css(#{$prefix + $selector}, $property, $items, $design-token);
       }
     }
   }
