@@ -12,6 +12,7 @@ A tiny, Sass-powered utility class generator, with handy helpers, that helps you
     + [`$gorko-colors` (optional)](#--gorko-colors---optional-)
     + [`$gorko-config` (required)](#--gorko-config---required-)
     + [Breakpoints](#breakpoints)
+    + [Design tokens](#design-tokens)
   * [Utility Class Generator](#utility-class-generator)
       - [Example outputs](#example-outputs)
   * [Sass functions](#sass-functions)
@@ -245,6 +246,19 @@ The `breakpoints` map in `$gorko-config` defines media queries for the utility c
 
 You can add as many or as little of these as you like and call them whatever you like. The only requirement is that the value is a valid media query.
 
+### Design tokens
+
+The `design-tokens` map in `$gorko-config` defines [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) which can be used by the utility class generator. The key will be the name of the design token and the value is a map of token types. Here is an example config:
+
+```scss
+'design-tokens': (
+  'color': (
+    'dark': #1a1a1a,
+    'light': #f3f3f3
+  )
+)
+```
+
 ## Utility Class Generator
 
 The utility class generator loops through `$gorko-config` looking for items that have a valid utility class structure. The following structure is required to generate a utility class:
@@ -312,6 +326,43 @@ If we set the `output` to be `responsive`, with the default `breakpoints` define
   .lg\:width-half {
     width: 50%;
   }
+}
+```
+
+### `use-design-token`
+
+Optionally you can define `use-design-token` with a [`design-tokens`](#design-tokens) key as the value in the utility class structure. This will set the property value as the design token CSS custom property.
+
+#### Example
+
+```scss
+$gorko-config: (
+  'design-tokens': (
+    'color': $gorko-colors
+  ),
+  'bg': (
+    'items': $gorko-colors,
+    'output': 'standard',
+    'property': 'background',
+    'use-design-token': 'color'
+  )
+)
+```
+
+The above config will output:
+
+```css
+:root {
+  --color-dark: #1a1a1a;
+  --color-light: #f3f3f3;
+}
+
+.bg-dark {
+  background: var(--color-dark);
+}
+
+.bg-light {
+  background: var(--color-light);
 }
 ```
 
