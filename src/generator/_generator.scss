@@ -2,12 +2,12 @@
 
 /// Only run if there should be an output
 @if ($outputTokenCSS == true) {
-  $design-tokens: map-get($gorko-config, 'design-tokens');
+  $tokens: map-get($gorko-config, 'tokens');
   
-  @if ($design-tokens) {
+  @if ($tokens) {
     // Generate custom properties for each design token
     :root {
-      @each $token, $items in $design-tokens {
+      @each $token, $items in $tokens {
         @each $key, $value in $items {
           --#{$token + '-' + $key}: #{$value};
         }

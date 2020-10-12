@@ -34,15 +34,23 @@ $gorko-colors: (
 /// to enabling/disabling pre-built components/utilities.
 ///
 $gorko-config: (
+  'tokens': (
+    'size': $gorko-size-scale,
+    'color': $gorko-colors
+  ),
   'bg': (
     'items': $gorko-colors,
     'output': 'standard',
     'property': 'background',
+    'css-vars': true,
+    'token-group': 'color'
   ),
   'color': (
     'items': $gorko-colors,
     'output': 'standard',
     'property': 'color',
+    'css-vars': true,
+    'token-group': 'color'
   ),
   'box': (
     'items': (
@@ -115,7 +123,9 @@ $gorko-config: (
   'text': (
     'items': $gorko-size-scale,
     'output': 'responsive',
-    'property': 'font-size'
+    'property': 'font-size',
+    'css-vars': true,
+    'token-group': 'size'
   ),
   'weight': (
     'items': (
