@@ -66,7 +66,7 @@ This is the default configuration. It is recommended that you use it as your bas
 /// you keep it at 1rem because that is the root font size. You
 /// can set it to whatever you like and whatever unit you like.
 ///
-$gorko-base-size: 1rem !default;
+$gorko-base-size: 1rem;
 
 /// SIZE SCALE
 /// This is a Major Third scale that powers all the utilities that
@@ -81,7 +81,7 @@ $gorko-size-scale: (
   '600': $gorko-base-size * 1.6,
   '700': $gorko-base-size * 2,
   '900': $gorko-base-size * 3
-) !default;
+);
 
 /// COLORS
 /// Colors are shared between backgrounds and text by default.
@@ -90,7 +90,7 @@ $gorko-size-scale: (
 $gorko-colors: (
   'dark': #1a1a1a,
   'light': #f3f3f3
-) !default;
+);
 
 /// CORE CONFIG
 /// This powers everything from utility class generation to breakpoints
@@ -204,7 +204,7 @@ $gorko-config: (
     'md': '(min-width: 48em)',
     'lg': '(min-width: 62em)'
   )
-) !default;
+);
 ```
 
 ### `$gorko-base-size` (optional)
