@@ -10,7 +10,7 @@
     $prefix: #{$key + '\\:'};
     $is-breakpoint: true;
 
-    @media screen and #{$value} {
+    @media #{$value} {
       @include cycle($prefix, $is-breakpoint);
     }
   }

@@ -284,7 +284,7 @@ If we set the `output` to be `responsive`, with the default `breakpoints` define
   width: 50%;
 }
 
-@media screen and (min-width: 36em) {
+@media (min-width: 36em) {
   .sm\:width-full {
     width: 100%;
   }
@@ -294,7 +294,7 @@ If we set the `output` to be `responsive`, with the default `breakpoints` define
   }
 }
 
-@media screen and (min-width: 48em) {
+@media (min-width: 48em) {
   .md\:width-full {
     width: 100%;
   }
@@ -304,7 +304,7 @@ If we set the `output` to be `responsive`, with the default `breakpoints` define
   }
 }
 
-@media screen and (min-width: 62em) {
+@media (min-width: 62em) {
   .lg\:width-full {
     width: 100%;
   }
