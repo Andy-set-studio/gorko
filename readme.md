@@ -12,7 +12,7 @@ A tiny, Sass-powered utility class generator, with handy helpers, that helps you
     + [`$gorko-colors` (optional)](#--gorko-colors---optional-)
     + [`$gorko-config` (required)](#--gorko-config---required-)
     + [Breakpoints](#breakpoints)
-    + [Design tokens](#design-tokens)
+    + [CSS Custom Properties](#css-custom-properties)
   * [Utility Class Generator](#utility-class-generator)
       - [Example outputs](#example-outputs)
   * [Sass functions](#sass-functions)
@@ -246,7 +246,7 @@ The `breakpoints` map in `$gorko-config` defines media queries for the utility c
 
 You can add as many or as little of these as you like and call them whatever you like. The only requirement is that the value is a valid media query.
 
-### Design tokens
+### CSS Custom Properties
 
 The `tokens` map in `$gorko-config` defines [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) which can be used by the utility class generator. The key will be the name of the design token and the value is a map of token types. Here is an example config:
 
@@ -264,14 +264,21 @@ The `tokens` map in `$gorko-config` defines [CSS custom properties](https://deve
 The utility class generator loops through `$gorko-config` looking for items that have a valid utility class structure. The following structure is required to generate a utility class:
 
 ```scss
-'width':('items':('full':'100%','half': '50%',
-	),
-	'output': 'standard',
-	'property': 'width'
-),;
+'width': (
+  'items': (
+    'full': '100%',
+    'half': '50%'
+  ),
+  'output': 'standard',
+  'property': 'width'
+),
+
 ```
 
-The first key is the name of the utility and that contains a Sass map. Inside that map, you need to have the following: - `items`: a map of key/value pairs which link a utility class to a CSS property’s value - `output`: this must be `responsive` or `standard`. If you set it to `responsive`, it will generate the same utility class for **every breakpoint that is defined**. - `property`: the [CSS property](https://css-tricks.com/almanac/properties/) that this utility controls.
+The first key is the name of the utility and that contains a Sass map. Inside that map, you need to have the following: 
+- `items`: a map of key/value pairs which link a utility class to a CSS property’s value. If you want to use CSS Custom Properties, this should be the string key, referencing the `'css-vars'` `$gorko-config` group that you want to use 
+- `output`: this must be `responsive` or `standard`. If you set it to `responsive`, it will generate the same utility class for **every breakpoint that is defined**.
+- `property`: the [CSS property](https://css-tricks.com/almanac/properties/) that this utility controls.
 
 #### Example outputs
 
@@ -329,34 +336,51 @@ If we set the `output` to be `responsive`, with the default `breakpoints` define
 }
 ```
 
-### `use-design-token`
+## Using CSS Custom Properties
 
-Optionally you can define `use-design-token` with a [`design-tokens`](#design-tokens) key as the value in the utility class structure. This will set the property value as the design token CSS custom property.
+You might want to use CSS Custom Properties instead of static references to tokens. To do so with Gorko, you need to make a couple of adjustments to your `$gorko-config`. 
 
-#### Example
+Firstly, at the top, you need to add a `css-vars` group which has a **key** and a value, which should be a map of tokens. 
 
 ```scss
 $gorko-config: (
-  'design-tokens': (
-    'color': $gorko-colors
-  ),
-  'bg': (
-    'items': $gorko-colors,
-    'output': 'standard',
-    'property': 'background',
-    'use-design-token': 'color'
+  'css-vars': (
+    'color': $gorko-colors,
+    'weight': (
+	    'bold': 700,
+	    'black': 900
+    )
   )
 )
 ```
 
-The above config will output:
+In this example, we have defined a `'color'` group which uses `$gorko-colors`, but also a `'weight'` group where we have defined key value pairs, just like we do in the utility class generator. 
+
+This will now generate a collection of CSS Custom properties like this: 
 
 ```css
 :root {
   --color-dark: #1a1a1a;
   --color-light: #f3f3f3;
+  --weight-bold: 700;
+  --weight-black: 900;
 }
+```
 
+To use CSS Custom Properties in a utility class, we need to first, switch `'items'` to be a reference to the `'css-vars'` group we want, then set `'css-vars'` to be `true`.
+
+```scss
+'bg': (
+  'items': 'color',
+  'css-vars': true,
+  'output': 'standard',
+  'property': 'background'
+)
+```
+
+Now, the background utility classes will look like this:
+
+```css
 .bg-dark {
   background: var(--color-dark);
 }
@@ -365,6 +389,8 @@ The above config will output:
   background: var(--color-light);
 }
 ```
+
+**Note**: You can use a combination of CSS Custom Properties _and_ static references to tokens for different utility classes. Gorko is flexible enough to let you do what works for you and your team.
 
 ## Sass functions
 
