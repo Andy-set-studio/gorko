@@ -15,6 +15,7 @@ A tiny, Sass-powered utility class generator, with handy helpers, that helps you
     + [CSS Custom Properties](#css-custom-properties)
   * [Utility Class Generator](#utility-class-generator)
       - [Example outputs](#example-outputs)
+  * [Using Custom Properties](#using-css-custom-properties)
   * [Sass functions](#sass-functions)
     + [`get-color($key: string)`](#-get-color--key--string--)
       - [Example](#example)
@@ -267,7 +268,7 @@ The first key is the name of the utility and that contains a Sass map. Inside th
 - `output`: this must be `responsive` or `standard`. If you set it to `responsive`, it will generate the same utility class for **every breakpoint that is defined**.
 - `property`: the [CSS property](https://css-tricks.com/almanac/properties/) that this utility controls.
 
-#### Example outputs
+### Example outputs
 
 The above structure would output the following utility classes:
 
@@ -324,6 +325,8 @@ If we set the `output` to be `responsive`, with the default `breakpoints` define
 ```
 
 ## Using CSS Custom Properties
+
+**[See a demo repo](https://github.com/andy-piccalilli/gorko-custom-props-demo)**
 
 You might want to use CSS Custom Properties instead of static references to tokens. To do so with Gorko, you need to make a couple of adjustments to your `$gorko-config`. 
 
