@@ -246,19 +246,6 @@ The `breakpoints` map in `$gorko-config` defines media queries for the utility c
 
 You can add as many or as little of these as you like and call them whatever you like. The only requirement is that the value is a valid media query.
 
-### CSS Custom Properties
-
-The `tokens` map in `$gorko-config` defines [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) which can be used by the utility class generator. The key will be the name of the design token and the value is a map of token types. Here is an example config:
-
-```scss
-'design-tokens': (
-  'color': (
-    'dark': #1a1a1a,
-    'light': #f3f3f3
-  )
-)
-```
-
 ## Utility Class Generator
 
 The utility class generator loops through `$gorko-config` looking for items that have a valid utility class structure. The following structure is required to generate a utility class:
@@ -347,8 +334,8 @@ $gorko-config: (
   'css-vars': (
     'color': $gorko-colors,
     'weight': (
-	    'bold': 700,
-	    'black': 900
+      'bold': 700,
+      'black': 900
     )
   )
 )
