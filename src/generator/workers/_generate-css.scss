@@ -5,14 +5,14 @@
 /// @param {string} $selector - The CSS selector that should be generated
 /// @param {string} $property - The CSS property that this utility affects
 /// @param {map} $items - The collection of utility items to generate classes for
-/// @param {boolean} $use-css-vars - wip! this is to tell generate-css to use either a value or a CSS Variable
-/// @param {string} $token-group - wip! this will be the name of the CSS variable you wish to use
+/// @param {boolean} $use-css-vars - this is to tell generate-css to use either a value or a CSS Variable
+/// @param {string} $item-key - the key for items which is used for tying each CSS var up to the item value
 ///
-@mixin generate-css($selector, $property, $items, $use-css-vars, $token-group) {
+@mixin generate-css($selector, $property, $items, $use-css-vars, $item-key) {
   @each $key, $value in $items {
     #{'.' + $selector + '-' + $key} {
       @if ($use-css-vars) {
-        #{ $property }: var(--#{$token-group + '-' + $key});
+        #{ $property }: var(--#{$item-key + '-' + $key});
       } @else {
         #{ $property }: #{$value};
       }

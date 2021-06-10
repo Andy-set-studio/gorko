@@ -248,7 +248,7 @@ You can add as many or as little of these as you like and call them whatever you
 
 ### Design tokens
 
-The `design-tokens` map in `$gorko-config` defines [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) which can be used by the utility class generator. The key will be the name of the design token and the value is a map of token types. Here is an example config:
+The `tokens` map in `$gorko-config` defines [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) which can be used by the utility class generator. The key will be the name of the design token and the value is a map of token types. Here is an example config:
 
 ```scss
 'design-tokens': (

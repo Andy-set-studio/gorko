@@ -2,19 +2,19 @@
 
 /// Only run if there should be an output
 @if ($outputTokenCSS == true) {
-  $tokens: map-get($gorko-config, 'tokens');
-  
-  @if ($tokens) {
-    // Generate custom properties for each design token
+  $cssVars: map-get($gorko-config, 'css-vars');
+
+  @if ($cssVars) {
+    // Generate custom properties for each CSS var
     :root {
-      @each $token, $items in $tokens {
+      @each $var, $items in $cssVars {
         @each $key, $value in $items {
-          --#{$token + '-' + $key}: #{$value};
+          --#{$var + '-' + $key}: #{$value};
         }
       }
     }
   }
-  
+
   /// Run the standard cycle first
   @include cycle('', false);
 
