@@ -14,9 +14,10 @@ A tiny, Sass-powered utility class generator, with handy helpers, that helps you
     + [Breakpoints](#breakpoints)
     + [CSS Custom Properties](#css-custom-properties)
   * [Utility Class Generator](#utility-class-generator)
-      - [Example outputs](#example-outputs)
+      + [Example outputs](#example-outputs)
+	* [Generating Utility Classes On Demand](#generating-utility-classes-on-demand)
   * [Using Custom Properties](#using-css-custom-properties)
-			- [Using themes](#using-themes)
+			+ [Using themes](#using-themes)
   * [Sass functions](#sass-functions)
     + [`get-color($key: string)`](#-get-color--key--string--)
       - [Example](#example)
@@ -324,6 +325,33 @@ If we set the `output` to be `responsive`, with the default `breakpoints` define
   }
 }
 ```
+
+## Generating Utility Classes On Demand
+
+The default behaviour of Gorko is to generate utility classes, but in the spirit of being as flexible as possible, you can stop it doing that by setting `$generate-utility-classes` to `false` when you pull Gorko into your project, like this: 
+
+```scss
+$generate-utility-classes: false;
+@import 'config';
+@import '../path/to/your/node_modules/gorko/gorko.scss';
+```
+
+We might want to generate those utility classes later on in the CSS, though, so we use the `generate-utility-classes()` mixin anywhere **after** Gorko has been pulled in.
+
+```scss
+$generate-utility-classes: false;
+@import 'config';
+@import '../path/to/your/node_modules/gorko/gorko.scss';
+
+// Standard authored CSS
+body {
+	display: grid;
+	place-items: center;
+}
+
+// Generate utilities after everything else 
+@include generate-utility-classes();
+``` 
 
 ## Using CSS Custom Properties
 
