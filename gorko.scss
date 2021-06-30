@@ -3,7 +3,13 @@
 @import './src/default-config';
 
 /// Set default feature flags
-$outputTokenCSS: true !default;
+$generate-utility-classes: true !default;
+
+// Support old features
+@if (variable-exists(outputTokenCSS)) {
+  @warn '$outputTokenCSS is deprecated. Please use $generate-utility-classes instead';
+  $generate-utility-classes: $outputTokenCSS;
+}
 
 @import './src/functions/functions';
 @import './src/mixins/mixins';

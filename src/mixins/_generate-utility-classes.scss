@@ -1,0 +1,23 @@
+@import '../generator/workers/cycle';
+
+/// GENERATE UTILITY CLASSES MIXIN
+/// Runs the utility class generator on demand
+///
+@mixin generate-utility-classes() {
+  /* GORKO: auto-generated utility classes start */
+
+  /// Run the standard cycle first
+  @include cycle('', false);
+
+  /// For each breakpoint, generate a prefix and run the cycle
+  @each $key, $value in map-get($gorko-config, 'breakpoints') {
+    $prefix: #{$key + '\\:'};
+    $is-breakpoint: true;
+
+    @media #{$value} {
+      @include cycle($prefix, $is-breakpoint);
+    }
+  }
+
+  /* GORKO: auto-generated utility classes end */
+}

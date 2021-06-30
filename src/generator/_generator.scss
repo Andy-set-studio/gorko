@@ -1,23 +1,14 @@
 @import 'workers/cycle';
 @import 'workers/generate-css-vars';
+@import '../mixins/generate-utility-classes';
 
 /// Only run if there should be an output
-@if ($outputTokenCSS == true) {
+@if ($generate-utility-classes == true) {
   $css-vars: map-get($gorko-config, 'css-vars');
 
   // Run the vars generator, regardless of whether they are defined
   @include generate-css-vars($css-vars);
 
-  /// Run the standard cycle first
-  @include cycle('', false);
-
-  /// For each breakpoint, generate a prefix and run the cycle
-  @each $key, $value in map-get($gorko-config, 'breakpoints') {
-    $prefix: #{$key + '\\:'};
-    $is-breakpoint: true;
-
-    @media #{$value} {
-      @include cycle($prefix, $is-breakpoint);
-    }
-  }
+  // Generate utility classes
+  @include generate-utility-classes();
 }
