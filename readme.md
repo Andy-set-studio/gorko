@@ -15,9 +15,9 @@ A tiny, Sass-powered utility class generator, with handy helpers, that helps you
     + [CSS Custom Properties](#css-custom-properties)
   * [Utility Class Generator](#utility-class-generator)
       + [Example outputs](#example-outputs)
-	* [Generating Utility Classes On Demand](#generating-utility-classes-on-demand)
+  * [Generating Utility Classes On Demand](#generating-utility-classes-on-demand)
   * [Using Custom Properties](#using-css-custom-properties)
-			+ [Using themes](#using-themes)
+    + [Using themes](#using-themes)
   * [Sass functions](#sass-functions)
     + [`get-color($key: string)`](#-get-color--key--string--)
       - [Example](#example)
@@ -425,7 +425,7 @@ First, we set some values.
 $gorko-colors: (
   'dark': #1a1a1a,
   'light': #f3f3f3
-) !default;
+);
 
 $light-colors: (
   'text': map-get($gorko-colors, 'dark'),
