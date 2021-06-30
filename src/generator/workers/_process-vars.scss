@@ -1,0 +1,12 @@
+/// PROCESS VARS MIXIN
+/// A reusable looper that generates custom property rules
+///
+/// @param {map} $passed-vars - A collection of keys and values
+///
+@mixin process-vars($passed-vars) {
+  @each $var, $items in $passed-vars {
+    @each $key, $value in $items {
+      --#{$var + '-' + $key}: #{$value};
+    }
+  }
+}
