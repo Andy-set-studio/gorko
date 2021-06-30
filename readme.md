@@ -16,6 +16,7 @@ A tiny, Sass-powered utility class generator, with handy helpers, that helps you
   * [Utility Class Generator](#utility-class-generator)
       - [Example outputs](#example-outputs)
   * [Using Custom Properties](#using-css-custom-properties)
+			- [Using themes](#using-themes)
   * [Sass functions](#sass-functions)
     + [`get-color($key: string)`](#-get-color--key--string--)
       - [Example](#example)
@@ -381,6 +382,111 @@ Now, the background utility classes will look like this:
 ```
 
 **Note**: You can use a combination of CSS Custom Properties _and_ static references to tokens for different utility classes. Gorko is flexible enough to let you do what works for you and your team.
+
+### Using themes 
+
+**This feature requires Custom Properties**
+
+A handy part of the Custom Property support with Gorko is the ability to generate multiple themes. These themes can power dark mode with `@media (prefers-color-scheme: dark)` or be prefixed with whatever scheme you like.
+
+Let’s say you want a dark mode that [both honours the user’s preference, via a media query, and also, can be toggled](https://piccalil.li/tutorial/create-a-user-controlled-dark-or-light-mode/). The toggle version could use `[data-theme="dark"]` as its prefix. We’ll generate a default light theme too.
+
+First, we set some values.
+
+```scss
+$gorko-colors: (
+  'dark': #1a1a1a,
+  'light': #f3f3f3
+) !default;
+
+$light-colors: (
+  'text': map-get($gorko-colors, 'dark'),
+  'bg': map-get($gorko-colors, 'light')
+);
+
+$dark-colors: (
+  'text': map-get($gorko-colors, 'light'),
+  'bg': map-get($gorko-colors, 'dark')
+);
+```
+
+Then, we tweak `$gorko-config`.
+
+```scss
+$gorko-config: (
+  'css-vars': (
+    'themes': (
+      'default': (
+        'tokens': (
+          'color': $light-colors
+        )
+      ),
+      'dark': (
+        'prefers-color-scheme': 'dark',
+        'tokens': (
+          'color': $dark-colors
+        )
+      ),
+      'dark-toggle': (
+        'prefix': '[data-theme="dark"]',
+        'tokens': (
+          'color': $dark-colors
+        )
+      )
+    )
+  ),
+  /// the rest of your config
+);
+```
+
+This then generates the following Custom Properties: 
+
+```css
+:root {
+  --color-text: #1a1a1a;
+  --color-bg: #f3f3f3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #f3f3f3;
+    --color-bg: #1a1a1a;
+  }
+}
+
+[data-theme='dark'] {
+  --color-text: #f3f3f3;
+  --color-bg: #1a1a1a;
+}
+```
+
+Now, we can style elements like so and regardless of what theme is selected, we won’t have to change our CSS:
+
+```css
+.my-element {
+	background: var(--color-bg);
+	text: var(--color-text);
+}
+```
+
+A complete theme map looks like this:
+
+```scss
+'dark-toggle': ( // Name required 
+  'prefix': '[data-theme="dark"]', // Optional. Will be :root if not set
+  'prefers-color-scheme': 'dark', // Optional. Will generate @media rule if set 
+  'tokens': ( // Required. Map of key value pairs 
+    'color': (
+      'primary': #1a1a1a,
+      'secondary': #f3f3f
+    )
+  )
+)
+```
+
+You can generate as many themes with whatever prefix you can think up!
+
+You could also [generate color utility classes using the generator](#utility-class-generator) that use these custom properties. 
 
 ## Sass functions
 
