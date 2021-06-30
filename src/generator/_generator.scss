@@ -1,19 +1,12 @@
 @import 'workers/cycle';
+@import 'workers/generate-css-vars';
 
 /// Only run if there should be an output
 @if ($outputTokenCSS == true) {
-  $cssVars: map-get($gorko-config, 'css-vars');
+  $css-vars: map-get($gorko-config, 'css-vars');
 
-  @if ($cssVars) {
-    // Generate custom properties for each CSS var
-    :root {
-      @each $var, $items in $cssVars {
-        @each $key, $value in $items {
-          --#{$var + '-' + $key}: #{$value};
-        }
-      }
-    }
-  }
+  // Run the vars generator, regardless of whether they are defined
+  @include generate-css-vars($css-vars);
 
   /// Run the standard cycle first
   @include cycle('', false);
