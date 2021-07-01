@@ -8,18 +8,32 @@
 @mixin apply-utility($key, $value-key) {
   $utility: map-get($gorko-config, $key);
   $property: map-get($utility, 'property');
+  $use-css-vars: map-get($utility, 'css-vars');
   $items: map-get($utility, 'items');
-  $item-value: map-get($items, $value-key);
+  $vars-key: '';
 
-  @if ($property and $item-value) {
-    #{ $property }: #{$item-value};
+  /// If this utility class is using vars, we need to extract which var it is using
+  @if ($use-css-vars) {
+    $vars: map-get($gorko-config, 'css-vars');
+    /// The standard $items expression will have returned a string in this context
+    $vars-key: $items;
+
+    // We've got all we need so generate that custom property reference with var
+    #{$property}: var(--#{$vars-key + '-' + $value-key});
   } @else {
-    @if ($property) {
-      @warn #{'Value: ‘' + $value-key + '’ doesn’t exist in ‘' + $key + '’' };
-    }
+    // No CSS vars so we need to find a property and key match
+    $item-value: map-get($items, $value-key);
 
-    @if ($item-value) {
-      @warn #{ 'Utility ‘' + $key + '’ doesn’t exist' };
+    @if ($property and $item-value) {
+      #{$property}: #{$item-value};
+    } @else {
+      @if ($property) {
+        @warn #{'Value: ‘' + $value-key + '’ doesn’t exist in ‘' + $key + '’' };
+      }
+
+      @if ($item-value) {
+        @warn #{'Utility ‘' + $key + '’ doesn’t exist'};
+      }
     }
   }
 }
