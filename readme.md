@@ -432,7 +432,7 @@ First, we set some values.
 $gorko-colors: (
   'dark': #1a1a1a,
   'light': #f3f3f3
-) !default;
+);
 
 $light-colors: (
   'text': map-get($gorko-colors, 'dark'),
