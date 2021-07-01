@@ -1,34 +1,33 @@
 # Gorko
 
-A tiny, Sass-powered utility class generator, with handy helpers, that helps you to power your front-ends with a single source of truth.
+A tiny, Sass-powered design-token led utility class generator, with handy helpers, that helps you to power your front-ends with a single source of truth.
 
-## Table of contents
+## Table of contents 
 
 - [Gorko](#gorko)
   * [Getting started](#getting-started)
   * [Configuration](#configuration)
-    + [`$gorko-base-size` (optional)](#--gorko-base-size---optional-)
-    + [`$gorko-size-scale` (optional)](#--gorko-size-scale---optional-)
-    + [`$gorko-colors` (optional)](#--gorko-colors---optional-)
-    + [`$gorko-config` (required)](#--gorko-config---required-)
+    + [Base size (optional)](#base-size--optional-)
+    + [Size scale (optional)](#size-scale--optional-)
+    + [Colors (optional)](#colors--optional-)
+    + [Gorko config (required)](#gorko-config--required-)
     + [Breakpoints](#breakpoints)
-    + [CSS Custom Properties](#css-custom-properties)
   * [Utility Class Generator](#utility-class-generator)
-      + [Example outputs](#example-outputs)
+    + [Example outputs](#example-outputs)
   * [Generating Utility Classes On Demand](#generating-utility-classes-on-demand)
-  * [Using Custom Properties](#using-css-custom-properties)
+  * [Using CSS Custom Properties](#using-css-custom-properties)
     + [Using themes](#using-themes)
   * [Sass functions](#sass-functions)
-    + [`get-color($key: string)`](#-get-color--key--string--)
+    + [Get color](#get-color)
       - [Example](#example)
-    + [`get-config-value($key: string, $group: string)`](#get-config-value--key--string---group--string-)
+    + [Get utility value](#get-utility-value)
       - [Example](#example-1)
-    + [`get-size($ratio-key: string)`](#-get-size--ratio-key--string--)
+    + [Get size](#get-size)
       - [Example](#example-2)
   * [Sass mixins](#sass-mixins)
-    + [`apply-utility($key: string, $value-key: string)`](#-apply-utility--key--string---value-key--string--)
+    + [Apply utility](#apply-utility)
       - [Example](#example-3)
-    + [`media-query($key: string)`](#-media-query--key--string--)
+    + [Media query](#media-query)
       - [Example](#example-4)
   * [Contributing](#contributing)
   * [Pull Request Process](#pull-request-process)
@@ -211,23 +210,31 @@ $gorko-config: (
 );
 ```
 
-### `$gorko-base-size` (optional)
+### Base size (optional)
+
+`$gorko-base-size`
 
 The base size for the size ratio calculations. It is only required for the default configuration.
 
-### `$gorko-size-scale` (optional)
+### Size scale (optional)
+
+`$gorko-size-scale`
 
 This takes the base size and by default, generates a **major third** size scale. This can be set to whatever scale you like.
 
 If this is not set, the `get-size` function will use the default configuration.
 
-### `$gorko-colors` (optional)
+### Colors (optional)
+
+`$gorko-colors`
 
 A collection of key/value pairs that by default, generate text and background colour utilities.
 
 If this is not set, the `get-color` function will use the default configuration.
 
-### `$gorko-config` (required)
+### Gorko config (required)
+
+`$gorko-config`
 
 🚨 Without this set, Gorko won’t work. 🚨
 
@@ -520,7 +527,9 @@ You could also [generate color utility classes using the generator](#utility-cla
 
 There are a couple of handy functions that give you access to configuration settings.
 
-### `get-color($key: string)`
+### Get color
+
+`get-color($key: string)`
 
 Takes the passed `$key` and attempts to retrieve a match from `$gorko-colors`.
 
@@ -532,19 +541,23 @@ Using the default config:
 $dark = get-color('dark'); // #1a1a1a
 ```
 
-### `get-config-value($key: string, $group: string)`
+### Get utility value
 
-Returns back a 1 dimensional (key value pair) config value if available.
+`get-utility-value($key: string, $value-key: string)`
+
+Returns back the value for a utility class so you can use it directly.
 
 #### Example
 
 Using the default config:
 
 ```scss
-$light-weight: get-config-value('light', 'weight'); // 300
+font-weight: get-utility-value('weight', 'light'); // 300
 ```
 
-### `get-size($ratio-key: string)`
+### Get size
+
+`get-size($ratio-key: string)`
 
 Tries to match the passed `$ratio-key` with the `$gorko-size-scale`. Returns null if it can’t find a match.
 
@@ -558,7 +571,9 @@ $my-size: get-size('500'); // 1.25rem
 
 ## Sass mixins
 
-### `apply-utility($key: string, $value-key: string)`
+### Apply utility
+
+`apply-utility($key: string, $value-key: string)`
 
 Grab the property and value of one of the `$gorko-config` utilities that the generator will generate a class for.
 
@@ -572,7 +587,9 @@ Using the default config:
 }
 ```
 
-### `media-query($key: string)`
+### Media query
+
+`media-query($key: string)`
 
 Pass in the key of one of your breakpoints set in `$gorko-config['breakpoints']` and this mixin will generate the media query with your configured value.
 
