@@ -11,6 +11,12 @@
     /// First, we look for themes to see if we need to do extra work
     $themes: map-get($vars, 'themes');
 
+    /// Still generate the custom properties but remove the themes from the $vars
+    /// so we don't confuse the generator
+    :root {
+      @include process-vars(map-remove($vars, 'themes'));
+    }
+
     @if ($themes) {
       @each $name, $theme in $themes {
         $prefix: map-get($theme, 'prefix');

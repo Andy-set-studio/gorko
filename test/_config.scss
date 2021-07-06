@@ -30,13 +30,42 @@ $gorko-colors: (
   'blush': pink
 );
 
+$light-colors: (
+  'text': map-get($gorko-colors, 'dark'),
+  'bg': map-get($gorko-colors, 'light')
+);
+
+$dark-colors: (
+  'text': map-get($gorko-colors, 'light'),
+  'bg': map-get($gorko-colors, 'dark')
+);
+
 /// CORE CONFIG
 /// This powers everything from utility class generation to breakpoints
 /// to enabling/disabling pre-built components/utilities.
 ///
 $gorko-config: (
   'css-vars': (
-    'color': $gorko-colors
+    'color': $gorko-colors,
+    'themes': (
+      'default': (
+        'tokens': (
+          'color': $light-colors
+        )
+      ),
+      'dark': (
+        'prefers-color-scheme': 'dark',
+        'tokens': (
+          'color': $dark-colors
+        )
+      ),
+      'dark-toggle': (
+        'prefix': '[data-theme="dark"]',
+        'tokens': (
+          'color': $dark-colors
+        )
+      )
+    )
   ),
   'bg': (
     'items': 'color',
