@@ -2,13 +2,13 @@
 @import 'workers/generate-css-vars';
 @import '../mixins/generate-utility-classes';
 
+$css-vars: map-get($gorko-config, 'css-vars');
+
+// Run the vars generator, regardless of whether they are defined
+@include generate-css-vars($css-vars);
+
 /// Only run if there should be an output
 @if ($generate-utility-classes == true) {
-  $css-vars: map-get($gorko-config, 'css-vars');
-
-  // Run the vars generator, regardless of whether they are defined
-  @include generate-css-vars($css-vars);
-
   // Generate utility classes
   @include generate-utility-classes();
 }
