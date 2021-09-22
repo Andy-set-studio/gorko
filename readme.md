@@ -2,42 +2,42 @@
 
 A tiny, Sass-powered design-token led utility class generator, with handy helpers, that helps you to power your front-ends with a single source of truth.
 
-## Table of contents 
+## Table of contents
 
 - [Gorko](#gorko)
-  * [Getting started](#getting-started)
-  * [Configuration](#configuration)
-    + [Base size (optional)](#base-size--optional-)
-    + [Size scale (optional)](#size-scale--optional-)
-    + [Colors (optional)](#colors--optional-)
-    + [Gorko config (required)](#gorko-config--required-)
-    + [Breakpoints](#breakpoints)
-  * [Utility Class Generator](#utility-class-generator)
-    + [Example outputs](#example-outputs)
-  * [Generating Utility Classes On Demand](#generating-utility-classes-on-demand)
-  * [Using CSS Custom Properties](#using-css-custom-properties)
-    + [Using themes](#using-themes)
-  * [Sass functions](#sass-functions)
-    + [Get color](#get-color)
+  - [Getting started](#getting-started)
+  - [Configuration](#configuration)
+    - [Base size (optional)](#base-size--optional-)
+    - [Size scale (optional)](#size-scale--optional-)
+    - [Colors (optional)](#colors--optional-)
+    - [Gorko config (required)](#gorko-config--required-)
+    - [Breakpoints](#breakpoints)
+  - [Utility Class Generator](#utility-class-generator)
+    - [Example outputs](#example-outputs)
+  - [Generating Utility Classes On Demand](#generating-utility-classes-on-demand)
+  - [Using CSS Custom Properties](#using-css-custom-properties)
+    - [Using themes](#using-themes)
+  - [Sass functions](#sass-functions)
+    - [Get color](#get-color)
       - [Example](#example)
-    + [Get utility value](#get-utility-value)
+    - [Get utility value](#get-utility-value)
       - [Example](#example-1)
-    + [Get size](#get-size)
+    - [Get size](#get-size)
       - [Example](#example-2)
-  * [Sass mixins](#sass-mixins)
-    + [Apply utility](#apply-utility)
+  - [Sass mixins](#sass-mixins)
+    - [Apply utility](#apply-utility)
       - [Example](#example-3)
-    + [Media query](#media-query)
+    - [Media query](#media-query)
       - [Example](#example-4)
-  * [Contributing](#contributing)
-  * [Pull Request Process](#pull-request-process)
-  * [Code of Conduct](#code-of-conduct)
-    + [Our Pledge](#our-pledge)
-    + [Our Standards](#our-standards)
-    + [Our Responsibilities](#our-responsibilities)
-    + [Scope](#scope)
-    + [Enforcement](#enforcement)
-    + [Attribution](#attribution)
+  - [Contributing](#contributing)
+  - [Pull Request Process](#pull-request-process)
+  - [Code of Conduct](#code-of-conduct)
+    - [Our Pledge](#our-pledge)
+    - [Our Standards](#our-standards)
+    - [Our Responsibilities](#our-responsibilities)
+    - [Scope](#scope)
+    - [Enforcement](#enforcement)
+    - [Attribution](#attribution)
 
 ## Getting started
 
@@ -261,19 +261,16 @@ You can add as many or as little of these as you like and call them whatever you
 The utility class generator loops through `$gorko-config` looking for items that have a valid utility class structure. The following structure is required to generate a utility class:
 
 ```scss
-'width': (
-  'items': (
-    'full': '100%',
-    'half': '50%'
+'width':('items':('full':'100%','half': '50%'
   ),
   'output': 'standard',
   'property': 'width'
-),
-
+),;
 ```
 
-The first key is the name of the utility and that contains a Sass map. Inside that map, you need to have the following: 
-- `items`: a map of key/value pairs which link a utility class to a CSS property’s value. If you want to use CSS Custom Properties, this should be the string key, referencing the `'css-vars'` `$gorko-config` group that you want to use 
+The first key is the name of the utility and that contains a Sass map. Inside that map, you need to have the following:
+
+- `items`: a map of key/value pairs which link a utility class to a CSS property’s value. If you want to use CSS Custom Properties, this should be the string key, referencing the `'css-vars'` `$gorko-config` group that you want to use
 - `output`: this must be `responsive` or `standard`. If you set it to `responsive`, it will generate the same utility class for **every breakpoint that is defined**.
 - `property`: the [CSS property](https://css-tricks.com/almanac/properties/) that this utility controls.
 
@@ -335,7 +332,7 @@ If we set the `output` to be `responsive`, with the default `breakpoints` define
 
 ## Generating Utility Classes On Demand
 
-The default behaviour of Gorko is to generate utility classes, but in the spirit of being as flexible as possible, you can stop it doing that by setting `$generate-utility-classes` to `false` when you pull Gorko into your project, like this: 
+The default behaviour of Gorko is to generate utility classes, but in the spirit of being as flexible as possible, you can stop it doing that by setting `$generate-utility-classes` to `false` when you pull Gorko into your project, like this:
 
 ```scss
 $generate-utility-classes: false;
@@ -352,21 +349,21 @@ $generate-utility-classes: false;
 
 // Standard authored CSS
 body {
-	display: grid;
-	place-items: center;
+  display: grid;
+  place-items: center;
 }
 
-// Generate utilities after everything else 
+// Generate utilities after everything else
 @include generate-utility-classes();
-``` 
+```
 
 ## Using CSS Custom Properties
 
 **[See a demo repo](https://github.com/andy-piccalilli/gorko-custom-props-demo)**
 
-You might want to use CSS Custom Properties instead of static references to tokens. To do so with Gorko, you need to make a couple of adjustments to your `$gorko-config`. 
+You might want to use CSS Custom Properties instead of static references to tokens. To do so with Gorko, you need to make a couple of adjustments to your `$gorko-config`.
 
-Firstly, at the top, you need to add a `css-vars` group which has a **key** and a value, which should be a map of tokens. 
+Firstly, at the top, you need to add a `css-vars` group which has a **key** and a value, which should be a map of tokens.
 
 ```scss
 $gorko-config: (
@@ -377,12 +374,12 @@ $gorko-config: (
       'black': 900
     )
   )
-)
+);
 ```
 
-In this example, we have defined a `'color'` group which uses `$gorko-colors`, but also a `'weight'` group where we have defined key value pairs, just like we do in the utility class generator. 
+In this example, we have defined a `'color'` group which uses `$gorko-colors`, but also a `'weight'` group where we have defined key value pairs, just like we do in the utility class generator.
 
-This will now generate a collection of CSS Custom properties like this: 
+This will now generate a collection of CSS Custom properties like this:
 
 ```css
 :root {
@@ -418,7 +415,9 @@ Now, the background utility classes will look like this:
 
 **Note**: You can use a combination of CSS Custom Properties _and_ static references to tokens for different utility classes. Gorko is flexible enough to let you do what works for you and your team.
 
-### Using themes 
+When you enable CSS custom properties, Gorko will generate the `:root` blocks for you, but sometimes, you might want those `:root` blocks not to be rendered. This is common if you are generating more than one CSS bundle. **To disable the generation of CSS Custom Property blocks, set `$generate-css-vars = false;`, before you import Gorko, just like [generating utility classes on demand](#generating-utility-classes-on-demand)**.
+
+### Using themes
 
 **This feature requires Custom Properties**
 
@@ -474,7 +473,7 @@ $gorko-config: (
 );
 ```
 
-This then generates the following Custom Properties: 
+This then generates the following Custom Properties:
 
 ```css
 :root {
@@ -499,18 +498,18 @@ Now, we can style elements like so and regardless of what theme is selected, we 
 
 ```css
 .my-element {
-	background: var(--color-bg);
-	text: var(--color-text);
+  background: var(--color-bg);
+  text: var(--color-text);
 }
 ```
 
 A complete theme map looks like this:
 
 ```scss
-'dark-toggle': ( // Name required 
+'dark-toggle': ( // Name required
   'prefix': '[data-theme="dark"]', // Optional. Will be :root if not set
-  'prefers-color-scheme': 'dark', // Optional. Will generate @media rule if set 
-  'tokens': ( // Required. Map of key value pairs 
+  'prefers-color-scheme': 'dark', // Optional. Will generate @media rule if set
+  'tokens': ( // Required. Map of key value pairs
     'color': (
       'primary': #1a1a1a,
       'secondary': #f3f3f
@@ -521,7 +520,7 @@ A complete theme map looks like this:
 
 You can generate as many themes with whatever prefix you can think up!
 
-You could also [generate color utility classes using the generator](#utility-class-generator) that use these custom properties. 
+You could also [generate color utility classes using the generator](#utility-class-generator) that use these custom properties.
 
 ## Sass functions
 

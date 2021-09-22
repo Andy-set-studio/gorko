@@ -4,8 +4,11 @@
 
 $css-vars: map-get($gorko-config, 'css-vars');
 
-// Run the vars generator, regardless of whether they are defined
-@include generate-css-vars($css-vars);
+/// Run the vars generator, regardless of whether they are defined,
+/// but only if they are enabled
+@if ($generate-css-vars == true) {
+  @include generate-css-vars($css-vars);
+}
 
 /// Only run if there should be an output
 @if ($generate-utility-classes == true) {

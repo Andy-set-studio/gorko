@@ -3,6 +3,7 @@
 @import './src/default-config';
 
 /// Set default feature flags
+$generate-css-vars: true !default;
 $generate-utility-classes: true !default;
 
 // Support old features
