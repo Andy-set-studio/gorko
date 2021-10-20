@@ -4,15 +4,19 @@
 /// @param {string} $key - The configured utility’s key
 /// @param {string} $value-key - The value key that you are looking for within the utilty
 ///
+@import 'get-namespace';
+
 @function get-config-value($key, $value-key) {
+
   $utility: map-get($gorko-config, $key);
   $property: map-get($utility, 'property');
   $use-css-vars: map-get($utility, 'css-vars');
   $items: map-get($utility, 'items');
   $vars-key: '';
 
-  /// If this utility class is using vars, we need to extract which var it is using
   @if ($use-css-vars) {
+    
+    /// If this utility class is using vars, we need to extract which var it is using
     $vars: map-get($gorko-config, 'css-vars');
     /// The standard $items expression will have returned a string in this context
     $vars-key: $items;
@@ -26,8 +30,11 @@
       @return false;
     }
 
+    $namespace: get-namespace('vars');
+
     // We've got all we need so generate that custom property reference with var
-    @return ('property': #{$property}, 'value': var(--#{$vars-key + '-' + $value-key}));
+    @return ('property': #{$property}, 'value': var(--#{$namespace + $vars-key + '-' + $value-key}));
+
   } @else {
     // No CSS vars so we need to find a property and key match
     $item-value: map-get($items, $value-key);

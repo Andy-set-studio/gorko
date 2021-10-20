@@ -522,6 +522,62 @@ You can generate as many themes with whatever prefix you can think up!
 
 You could also [generate color utility classes using the generator](#utility-class-generator) that use these custom properties.
 
+## Namespaces
+Gorko supports 'namespacing' both the generated class and variable names by allowing you to specify a prefix.  This is done using the `namespace` map within `$gorko-config`.  The default `namespace` config looks like this:
+
+````scss
+$gorko-config: (
+  'namespace': (
+    'prefix': '',             // string
+    'classes': true,          // boolean or string
+    'vars': false             // boolean or string
+  )
+)
+````
+### Namespace Settings
+#### prefix
+Specifying a value for `prefix` will append that value to classes (by default) and css variables (opt-in).  You are responsible for appending any separating character, such as a dash or underscore.
+
+#### classes
+Accepts either a boolean value indicating that the `prefix` should be applied to generated utility classes OR a string, which allows you to override the global `prefix`
+
+#### vars
+Accepts either a boolean value indicating that the `prefix` should be applied to css-vars OR a string, which allows you to override the global `prefix`
+
+### Examples
+
+Minimal Configuration: This configuration would prepend `my-` to the beginning of generated utility classes, but would not modify css variable names:
+
+````scss
+$gorko-config: (
+  'namespace': (
+    'prefix': 'my-'
+  )
+)
+````
+
+Everything prefixed:  This configuration applies the prefix to both utility classes and css variables:
+
+````scss
+$gorko-config: (
+  'namespace': (
+    'prefix': 'my-',
+    'vars': true
+  )
+)
+````
+
+Separate prefixes:  This configuration gives you the ability to provide different prefixes for utility classes and css variables:
+
+````scss
+$gorko-config: (
+  'namespace': (
+    'classes': 'my-class-',
+    'vars': 'my-var-'
+  )
+)
+````
+
 ## Sass functions
 
 There are a couple of handy functions that give you access to configuration settings.
