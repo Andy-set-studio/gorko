@@ -536,7 +536,7 @@ $gorko-config: (
 ````
 ### Namespace Settings
 #### prefix
-Specifying a value for `prefix` will append that value to classes (by default) and css variables (opt-in).  You are responsible for appending any separating character, such as a dash or underscore.
+Specifying a value for `prefix` will append that value to classes (by default) and css variables (opt-in).  You are responsible for appending any separating character, such as a dash or underscore. For example, if your namespace is `my-app-`, you need to add the trailing `-` character in the `'prefix'` section.
 
 #### classes
 Accepts either a boolean value indicating that the `prefix` should be applied to generated utility classes OR a string, which allows you to override the global `prefix`
