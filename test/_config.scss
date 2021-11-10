@@ -45,6 +45,11 @@ $dark-colors: (
 /// to enabling/disabling pre-built components/utilities.
 ///
 $gorko-config: (
+  'namespace': (
+    'prefix': 'my-prefix-',
+    'classes': true,
+    'css-vars': true
+  ),
   'css-vars': (
     'color': $gorko-colors,
     'themes': (
