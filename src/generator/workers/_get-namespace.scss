@@ -8,7 +8,7 @@
     $namespace-defaults: (
         'prefix': '',
         'classes': true,
-        'vars': false
+        'css-vars': false
     );
 
     $namespace-settings: map-get($gorko-config, 'namespace');

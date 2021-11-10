@@ -7,7 +7,7 @@
 
 @mixin process-vars($passed-vars) {
 
-  $namespace: get-namespace('vars');
+  $namespace: get-namespace('css-vars');
 
   @each $var, $items in $passed-vars {
     @each $key, $value in $items {

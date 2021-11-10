@@ -530,7 +530,7 @@ $gorko-config: (
   'namespace': (
     'prefix': '',             // string
     'classes': true,          // boolean or string
-    'vars': false             // boolean or string
+    'css-vars': false         // boolean or string
   )
 )
 ````
@@ -541,7 +541,7 @@ Specifying a value for `prefix` will append that value to classes (by default) a
 #### classes
 Accepts either a boolean value indicating that the `prefix` should be applied to generated utility classes OR a string, which allows you to override the global `prefix`
 
-#### vars
+#### css-vars
 Accepts either a boolean value indicating that the `prefix` should be applied to css-vars OR a string, which allows you to override the global `prefix`
 
 ### Examples
@@ -562,7 +562,7 @@ Everything prefixed:  This configuration applies the prefix to both utility clas
 $gorko-config: (
   'namespace': (
     'prefix': 'my-',
-    'vars': true
+    'css-vars': true
   )
 )
 ````
@@ -573,7 +573,7 @@ Separate prefixes:  This configuration gives you the ability to provide differen
 $gorko-config: (
   'namespace': (
     'classes': 'my-class-',
-    'vars': 'my-var-'
+    'css-vars': 'my-var-'
   )
 )
 ````

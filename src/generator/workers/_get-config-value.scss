@@ -30,7 +30,7 @@
       @return false;
     }
 
-    $namespace: get-namespace('vars');
+    $namespace: get-namespace('css-vars');
 
     // We've got all we need so generate that custom property reference with var
     @return ('property': #{$property}, 'value': var(--#{$namespace + $vars-key + '-' + $value-key}));
