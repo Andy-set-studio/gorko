@@ -17,7 +17,7 @@
         @return '';
     }
 
-    $namespace-settings-merged: map-merge($namespace-settings, $namespace-settings);
+    $namespace-settings-merged: map-merge($namespace-defaults, $namespace-settings);
     $prefix: map-get($namespace-settings-merged, 'prefix');
 
     $should-display-prefix: map-get($namespace-settings-merged, $namespace-type);

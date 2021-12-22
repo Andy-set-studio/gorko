@@ -13,7 +13,6 @@
 @mixin generate-css($selector, $property, $items, $use-css-vars, $item-key) {
 
   $var-namespace: get-namespace('css-vars');
-  $selector: get-namespace('classes') + $selector;
 
   @each $key, $value in $items {
     #{'.' + $selector + '-' + $key} {
