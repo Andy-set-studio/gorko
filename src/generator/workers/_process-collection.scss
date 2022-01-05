@@ -9,6 +9,7 @@
 /// @param {bool} $is-breakpoint - A flag for the responsive generation to use to determine wether to run or not
 ///
 @import 'generate-css';
+@import 'get-namespace';
 
 @mixin process-collection($collection, $prefix, $selector, $is-breakpoint) {
   $items: map-get($collection, 'items');
@@ -16,6 +17,8 @@
   $property: map-get($collection, 'property');
   $use-css-vars: map-get($collection, 'css-vars');
   $vars-key: '';
+
+  $selector: get-namespace('classes') + $selector;
 
   /// If this collection is using CSS vars, the items come from the
   /// 'css-vars' map in $gorko-config
@@ -28,6 +31,7 @@
   /// It'll only run if $items and $property aren't null. This means it'll ignore the breakpoints and design tokens, for example.
   @if ($property and $items) {
     @if ($output == 'responsive') {
+
       @include generate-css(
         #{$prefix + $selector},
         $property,
