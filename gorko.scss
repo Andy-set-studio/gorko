@@ -1,6 +1,6 @@
 /// Import the default config as the fallback for if
 /// the user hasn't yet set a config for their project
-@use './src/default-config';
+@import './src/default-config';
 
 /// Set default feature flags
 $generate-css-vars: true !default;
@@ -12,6 +12,6 @@ $generate-utility-classes: true !default;
   $generate-utility-classes: $outputTokenCSS;
 }
 
-@use './src/functions/functions';
-@use './src/mixins/mixins';
-@use './src/generator/generator';
+@import './src/functions/functions';
+@import './src/mixins/mixins';
+@import './src/generator/generator';
