@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "sass gorko.scss:dist/gorko.css test/test.scss:test/test.css",
-    "migrate": "sass-migrator module -migrate-deps --verbose --dry-run gorko.scss"
+    "migrate": "sass-migrator module --migrate-deps --verbose --dry-run gorko.scss"
   },
   "devDependencies": {
     "prettier": "^2.7.1"
