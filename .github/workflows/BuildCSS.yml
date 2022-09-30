@@ -26,7 +26,7 @@ jobs:
         
       - name: Npm Build
         if: env.UPDATE_NPM != 'true'
-        run: npm run migrate
+        run: npm run test
         
       - name: Commit changes
         if: env.UPDATE_NPM != 'true'
