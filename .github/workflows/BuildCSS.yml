@@ -29,7 +29,7 @@ jobs:
         run: npm run migrate
         
       - name: Commit changes
-        if: env.UPDATE_NPM != 'false'
+        if: env.UPDATE_NPM != 'true'
         uses: EndBug/add-and-commit@v9
         with:
           author_name: woodcock3
@@ -41,7 +41,7 @@ jobs:
           
           
       - name: pull request on npm update
-        if: env.UPDATE_NPM == 'false'
+        if: env.UPDATE_NPM == 'true'
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
