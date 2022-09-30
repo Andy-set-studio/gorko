@@ -1,3 +1,7 @@
+@use "sass:map";
+@use "sass:meta";
+@use "../../default-config";
+
 /// Grab the property and value of one of the $gorko-config utilities
 /// that the generator will generate a class for.
 ///
@@ -11,18 +15,18 @@
         'css-vars': false
     );
 
-    $namespace-settings: map-get($gorko-config, 'namespace');
+    $namespace-settings: map.get(default-config.$gorko-config, 'namespace');
     
     @if($namespace-settings == null){
         @return '';
     }
 
-    $namespace-settings-merged: map-merge($namespace-defaults, $namespace-settings);
-    $prefix: map-get($namespace-settings-merged, 'prefix');
+    $namespace-settings-merged: map.merge($namespace-defaults, $namespace-settings);
+    $prefix: map.get($namespace-settings-merged, 'prefix');
 
-    $should-display-prefix: map-get($namespace-settings-merged, $namespace-type);
+    $should-display-prefix: map.get($namespace-settings-merged, $namespace-type);
 
-    $is-setting-boolean: type-of($should-display-prefix) == bool;
+    $is-setting-boolean: meta.type-of($should-display-prefix) == bool;
     @if($should-display-prefix and $is-setting-boolean) {
         // If the specified setting is boolean true, return the global prefix
         @return $prefix;
