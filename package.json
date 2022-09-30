@@ -7,7 +7,7 @@
     "sass": "^1.55.0"
   },
   "scripts": {
-    "test": "sass gorko.scss:dist/gorko.css test/test.scss:test/test.css"
+    "test": "sass gorko.scss:dist/gorko.css test/test.scss:test/test.css --embed-sources"
   },
   "devDependencies": {
     "prettier": "^2.7.1"
