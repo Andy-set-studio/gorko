@@ -35,7 +35,7 @@ jobs:
           author_name: woodcock3
           author_email: woodcock3@users.noreply.github.com
           message: "Add test files"
-          add: "css"
+          add: "test"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
