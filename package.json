@@ -4,7 +4,8 @@
   "description": "A tiny Sass token class generator.",
   "main": "gorko.scss",
   "dependencies": {
-    "sass": "^1.55.0"
+    "sass": "^1.55.0",
+    "sass-migrator": "^1.7.1"
   },
   "scripts": {
     "test": "sass gorko.scss:dist/gorko.css test/test.scss:test/test.css --embed-sources"
