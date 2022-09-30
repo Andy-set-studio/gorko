@@ -6,10 +6,10 @@ on:
       
 # Conditional environmental if's      
 env:
-  UPDATE_NPM: true # false = deploy eleventy , true = update npm
+  UPDATE_NPM: false # false = deploy eleventy , true = update npm
 
 jobs:
-  build_deploy_eleventy:
+  build_css:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
