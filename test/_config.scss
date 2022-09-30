@@ -1,3 +1,5 @@
+@forward '../gorko' with (
+
 /// BASE SIZE
 /// All calculations are based on this. It’s recommended that
 /// you keep it at 1rem because that is the root font size. You
@@ -182,4 +184,5 @@ $gorko-config: (
     'md': '(min-width: 48em)',
     'lg': '(min-width: 62em)'
   )
+);
 );
