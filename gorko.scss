@@ -1,6 +1,6 @@
 /// Import the default config as the fallback for if
 /// the user hasn't yet set a config for their project
-@forward 'src/default-config';
+// @forward 'src/default-config';
 
 /// Set default feature flags
 $generate-css-vars: true !default;
