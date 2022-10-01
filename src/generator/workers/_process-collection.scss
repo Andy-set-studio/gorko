@@ -11,7 +11,7 @@
 @use "sass:map";
 @use 'generate-css';
 @use 'get-namespace';
-@use "../../default-config";
+@use "../../config";
 
 @mixin process-collection($collection, $prefix, $selector, $is-breakpoint) {
   $items: map.get($collection, 'items');
