@@ -9,7 +9,7 @@ $generate-utility-classes: true;
 /// you keep it at 1rem because that is the root font size. You
 /// can set it to whatever you like and whatever unit you like.
 ///
-$gorko-base-size: 1rem;
+$gorko-base-size: 1rem !default;
 
 
 /// SIZE SCALE
@@ -25,7 +25,7 @@ $gorko-size-scale: (
   '600': $gorko-base-size * 1.6,
   '700': $gorko-base-size * 2,
   '900': $gorko-base-size * 3
-);
+) !default;
 
 /// COLORS
 /// Colors are shared between backgrounds and text by default.
@@ -35,17 +35,17 @@ $gorko-colors: (
   'dark': #1a1a1a,
   'light': #f3f3f3,
   'blush': pink
-);
+) !default;
 
 $light-colors: (
   'text': map-get($gorko-colors, 'dark'),
   'bg': map-get($gorko-colors, 'light')
-);
+) !default;
 
 $dark-colors: (
   'text': map-get($gorko-colors, 'light'),
   'bg': map-get($gorko-colors, 'dark')
-);
+) !default;
 
 
 /// CORE CONFIG
@@ -189,4 +189,4 @@ $gorko-config: (
     'md': '(min-width: 48em)',
     'lg': '(min-width: 62em)'
   )
-);
+) !default;
