@@ -4,7 +4,7 @@
 @use '../mixins/generate-utility-classes' as classes;
 @use "../config";
 
-$css-vars: map.get(default-config.$gorko-config, 'css-vars');
+$css-vars: map.get(config.$gorko-config, 'css-vars');
 
 /// Run the vars generator, regardless of whether they are defined,
 /// but only if they are enabled
