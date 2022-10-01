@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../test/config";
+@use "../config";
 
 /// GET COLOR FUNCTION
 /// Function tries to match the passed $key with the $gorko-colors map. Returns null
