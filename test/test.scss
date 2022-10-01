@@ -6,5 +6,5 @@
 body {
   font-size: get-utility-value('text', '900');
   // background: get-config-value('color', 'blush');
-  @include apply-utility('color', 'blush');
+  @include gorko.apply-utility('color', 'blush');
 }
