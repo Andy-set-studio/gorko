@@ -15,7 +15,7 @@
     "prettier": "^2.7.1"
   },
   "style": "",
-  "sass": "gorko.scss",
+  "sass": "../gorko.scss",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hankchizljaw/gorko.git"
