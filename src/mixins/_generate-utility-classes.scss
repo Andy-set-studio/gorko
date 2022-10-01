@@ -12,7 +12,7 @@
   @include cycle.cycle('', false);
 
   /// For each breakpoint, generate a prefix and run the cycle
-  @each $key, $value in map.get(default-config.$gorko-config, 'breakpoints') {
+  @each $key, $value in map.get(config.$gorko-config, 'breakpoints') {
     $prefix: #{$key + '\\:'};
     $is-breakpoint: true;
 
