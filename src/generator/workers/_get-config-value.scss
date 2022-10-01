@@ -10,7 +10,7 @@
 
 @function get-config-value($key, $value-key) {
 
-  $utility: map.get(default-config.$gorko-config, $key);
+  $utility: map.get(config.$gorko-config, $key);
   $property: map.get($utility, 'property');
   $use-css-vars: map.get($utility, 'css-vars');
   $items: map.get($utility, 'items');
@@ -19,7 +19,7 @@
   @if ($use-css-vars) {
     
     /// If this utility class is using vars, we need to extract which var it is using
-    $vars: map.get(default-config.$gorko-config, 'css-vars');
+    $vars: map.get(config.$gorko-config, 'css-vars');
     /// The standard $items expression will have returned a string in this context
     $vars-key: $items;
 
