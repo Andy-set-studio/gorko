@@ -10,7 +10,7 @@
 @use "../../config";
 
 @mixin cycle($prefix, $is-breakpoint) {
-  @each $selector, $props in default-config.$gorko-config {
+  @each $selector, $props in config.$gorko-config {
     @if(meta.type-of($props) == 'map') {
       @include process-collection.process-collection($props, $prefix, $selector, $is-breakpoint);
     }
