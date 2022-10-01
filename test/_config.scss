@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "../default-config";
 
 /// Set feature flags
 $generate-css-vars: true;
