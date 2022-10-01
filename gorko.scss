@@ -8,6 +8,6 @@
 //  $generate-utility-classes: $outputTokenCSS;
 // }
 
-@use 'src/functions/functions';
-@use 'src/mixins/mixins';
-@use 'src/generator/generator';
+@forward 'src/functions/functions';
+@forward 'src/mixins/mixins';
+@forward 'src/generator/generator';
