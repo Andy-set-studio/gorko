@@ -2,19 +2,19 @@
 @use 'workers/cycle';
 @use 'workers/generate-css-vars';
 @use '../mixins/generate-utility-classes';
-@forward "../../gorko" as * show $generate-utility-classes, $generate-css-vars;
+@forward "../../gorko" show $generate-utility-classes, $generate-css-vars;
 @use "../default-config";
 
 $css-vars: map.get(default-config.$gorko-config, 'css-vars');
 
 /// Run the vars generator, regardless of whether they are defined,
 /// but only if they are enabled
-@if ($generate-css-vars == true) {
+@if (gorko.$generate-css-vars == true) {
   @include generate-css-vars.generate-css-vars($css-vars);
 }
 
 /// Only run if there should be an output
-@if ($generate-utility-classes == true) {
+@if (gorko.$generate-utility-classes == true) {
   // Generate utility classes
   @include generate-utility-classes.generate-utility-classes();
 }
