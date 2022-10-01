@@ -6,7 +6,7 @@
 ///
 @use "sass:map";
 @use 'get-namespace';
-@use "../../default-config";
+@use "../../config";
 
 @function get-config-value($key, $value-key) {
 
