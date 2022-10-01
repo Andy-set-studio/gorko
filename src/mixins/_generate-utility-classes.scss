@@ -1,6 +1,6 @@
 @use "sass:map";
 @use '../generator/workers/cycle';
-@use "config";
+@use "../config";
 
 /// GENERATE UTILITY CLASSES MIXIN
 /// Runs the utility class generator on demand
