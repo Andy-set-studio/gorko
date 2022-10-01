@@ -8,12 +8,12 @@ $css-vars: map.get(default-config.$gorko-config, 'css-vars');
 
 /// Run the vars generator, regardless of whether they are defined,
 /// but only if they are enabled
-@if (default-config.$generate-css-vars == true) {
+@if (config.$generate-css-vars == true) {
   @include vars.generate-css-vars($css-vars);
 }
 
 /// Only run if there should be an output
-@if (default-config.$generate-utility-classes == true) {
+@if (config.$generate-utility-classes == true) {
   // Generate utility classes
   @include classes.generate-utility-classes();
 }
