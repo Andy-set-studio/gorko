@@ -1,6 +1,6 @@
 @use "sass:map";
 @use "sass:meta";
-@use "../../default-config";
+@use "../../config";
 
 /// Grab the property and value of one of the $gorko-config utilities
 /// that the generator will generate a class for.
