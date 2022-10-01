@@ -1,470 +1,439 @@
-:root {
-  --my-prefix-color-dark: #1a1a1a;
-  --my-prefix-color-light: #f3f3f3;
-  --my-prefix-color-blush: pink;
-}
-
-:root {
-  --my-prefix-color-text: #1a1a1a;
-  --my-prefix-color-bg: #f3f3f3;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --my-prefix-color-text: #f3f3f3;
-    --my-prefix-color-bg: #1a1a1a;
-  }
-}
-[data-theme=dark] {
-  --my-prefix-color-text: #f3f3f3;
-  --my-prefix-color-bg: #1a1a1a;
-}
-
 /* GORKO: auto-generated utility classes start */
-.my-prefix-bg-dark {
-  background-color: var(--my-prefix-color-dark);
+.bg-dark {
+  background: #1a1a1a;
 }
 
-.my-prefix-bg-light {
-  background-color: var(--my-prefix-color-light);
+.bg-light {
+  background: #f3f3f3;
 }
 
-.my-prefix-bg-blush {
-  background-color: var(--my-prefix-color-blush);
+.color-dark {
+  color: #1a1a1a;
 }
 
-.my-prefix-color-dark {
-  color: var(--my-prefix-color-dark);
+.color-light {
+  color: #f3f3f3;
 }
 
-.my-prefix-color-light {
-  color: var(--my-prefix-color-light);
-}
-
-.my-prefix-color-blush {
-  color: var(--my-prefix-color-blush);
-}
-
-.my-prefix-box-block {
+.box-block {
   display: block;
 }
 
-.my-prefix-box-flex {
+.box-flex {
   display: flex;
 }
 
-.my-prefix-box-hide {
+.box-hide {
   display: none;
 }
 
-.my-prefix-box-show {
+.box-show {
   display: inherit;
 }
 
-.my-prefix-font-base {
+.font-base {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-.my-prefix-gap-top-300 {
+.gap-top-300 {
   margin-top: 0.8rem;
 }
 
-.my-prefix-gap-top-400 {
+.gap-top-400 {
   margin-top: 1rem;
 }
 
-.my-prefix-gap-top-500 {
+.gap-top-500 {
   margin-top: 1.25rem;
 }
 
-.my-prefix-gap-top-600 {
+.gap-top-600 {
   margin-top: 1.6rem;
 }
 
-.my-prefix-gap-top-700 {
+.gap-top-700 {
   margin-top: 2rem;
 }
 
-.my-prefix-gap-top-900 {
+.gap-top-900 {
   margin-top: 3rem;
 }
 
-.my-prefix-gap-right-300 {
+.gap-right-300 {
   margin-right: 0.8rem;
 }
 
-.my-prefix-gap-right-400 {
+.gap-right-400 {
   margin-right: 1rem;
 }
 
-.my-prefix-gap-right-500 {
+.gap-right-500 {
   margin-right: 1.25rem;
 }
 
-.my-prefix-gap-right-600 {
+.gap-right-600 {
   margin-right: 1.6rem;
 }
 
-.my-prefix-gap-right-700 {
+.gap-right-700 {
   margin-right: 2rem;
 }
 
-.my-prefix-gap-right-900 {
+.gap-right-900 {
   margin-right: 3rem;
 }
 
-.my-prefix-gap-bottom-300 {
+.gap-bottom-300 {
   margin-bottom: 0.8rem;
 }
 
-.my-prefix-gap-bottom-400 {
+.gap-bottom-400 {
   margin-bottom: 1rem;
 }
 
-.my-prefix-gap-bottom-500 {
+.gap-bottom-500 {
   margin-bottom: 1.25rem;
 }
 
-.my-prefix-gap-bottom-600 {
+.gap-bottom-600 {
   margin-bottom: 1.6rem;
 }
 
-.my-prefix-gap-bottom-700 {
+.gap-bottom-700 {
   margin-bottom: 2rem;
 }
 
-.my-prefix-gap-bottom-900 {
+.gap-bottom-900 {
   margin-bottom: 3rem;
 }
 
-.my-prefix-gap-left-300 {
+.gap-left-300 {
   margin-left: 0.8rem;
 }
 
-.my-prefix-gap-left-400 {
+.gap-left-400 {
   margin-left: 1rem;
 }
 
-.my-prefix-gap-left-500 {
+.gap-left-500 {
   margin-left: 1.25rem;
 }
 
-.my-prefix-gap-left-600 {
+.gap-left-600 {
   margin-left: 1.6rem;
 }
 
-.my-prefix-gap-left-700 {
+.gap-left-700 {
   margin-left: 2rem;
 }
 
-.my-prefix-gap-left-900 {
+.gap-left-900 {
   margin-left: 3rem;
 }
 
-.my-prefix-pad-top-300 {
+.pad-top-300 {
   padding-top: 0.8rem;
 }
 
-.my-prefix-pad-top-400 {
+.pad-top-400 {
   padding-top: 1rem;
 }
 
-.my-prefix-pad-top-500 {
+.pad-top-500 {
   padding-top: 1.25rem;
 }
 
-.my-prefix-pad-top-600 {
+.pad-top-600 {
   padding-top: 1.6rem;
 }
 
-.my-prefix-pad-top-700 {
+.pad-top-700 {
   padding-top: 2rem;
 }
 
-.my-prefix-pad-top-900 {
+.pad-top-900 {
   padding-top: 3rem;
 }
 
-.my-prefix-pad-right-300 {
+.pad-right-300 {
   padding-right: 0.8rem;
 }
 
-.my-prefix-pad-right-400 {
+.pad-right-400 {
   padding-right: 1rem;
 }
 
-.my-prefix-pad-right-500 {
+.pad-right-500 {
   padding-right: 1.25rem;
 }
 
-.my-prefix-pad-right-600 {
+.pad-right-600 {
   padding-right: 1.6rem;
 }
 
-.my-prefix-pad-right-700 {
+.pad-right-700 {
   padding-right: 2rem;
 }
 
-.my-prefix-pad-right-900 {
+.pad-right-900 {
   padding-right: 3rem;
 }
 
-.my-prefix-pad-bottom-300 {
+.pad-bottom-300 {
   padding-bottom: 0.8rem;
 }
 
-.my-prefix-pad-bottom-400 {
+.pad-bottom-400 {
   padding-bottom: 1rem;
 }
 
-.my-prefix-pad-bottom-500 {
+.pad-bottom-500 {
   padding-bottom: 1.25rem;
 }
 
-.my-prefix-pad-bottom-600 {
+.pad-bottom-600 {
   padding-bottom: 1.6rem;
 }
 
-.my-prefix-pad-bottom-700 {
+.pad-bottom-700 {
   padding-bottom: 2rem;
 }
 
-.my-prefix-pad-bottom-900 {
+.pad-bottom-900 {
   padding-bottom: 3rem;
 }
 
-.my-prefix-pad-left-300 {
+.pad-left-300 {
   padding-left: 0.8rem;
 }
 
-.my-prefix-pad-left-400 {
+.pad-left-400 {
   padding-left: 1rem;
 }
 
-.my-prefix-pad-left-500 {
+.pad-left-500 {
   padding-left: 1.25rem;
 }
 
-.my-prefix-pad-left-600 {
+.pad-left-600 {
   padding-left: 1.6rem;
 }
 
-.my-prefix-pad-left-700 {
+.pad-left-700 {
   padding-left: 2rem;
 }
 
-.my-prefix-pad-left-900 {
+.pad-left-900 {
   padding-left: 3rem;
 }
 
-.my-prefix-stack-300 {
+.stack-300 {
   z-index: 0;
 }
 
-.my-prefix-stack-400 {
+.stack-400 {
   z-index: 10;
 }
 
-.my-prefix-stack-500 {
+.stack-500 {
   z-index: 20;
 }
 
-.my-prefix-stack-600 {
+.stack-600 {
   z-index: 30;
 }
 
-.my-prefix-stack-700 {
+.stack-700 {
   z-index: 40;
 }
 
-.my-prefix-text-300 {
+.text-300 {
   font-size: 0.8rem;
 }
 
-.my-prefix-text-400 {
+.text-400 {
   font-size: 1rem;
 }
 
-.my-prefix-text-500 {
+.text-500 {
   font-size: 1.25rem;
 }
 
-.my-prefix-text-600 {
+.text-600 {
   font-size: 1.6rem;
 }
 
-.my-prefix-text-700 {
+.text-700 {
   font-size: 2rem;
 }
 
-.my-prefix-text-900 {
+.text-900 {
   font-size: 3rem;
 }
 
-.my-prefix-weight-light {
+.weight-light {
   font-weight: 300;
 }
 
-.my-prefix-weight-regular {
+.weight-regular {
   font-weight: 400;
 }
 
-.my-prefix-weight-bold {
+.weight-bold {
   font-weight: 700;
 }
 
-.my-prefix-width-full {
+.width-full {
   width: 100%;
 }
 
-.my-prefix-width-half {
+.width-half {
   width: 50%;
 }
 
-.my-prefix-width-quarter {
+.width-quarter {
   width: 25%;
 }
 
-.my-prefix-width-third {
+.width-third {
   width: 33.3333333333%;
 }
 
 @media (min-width: 36em) {
-  .sm\:my-prefix-box-block {
+  .sm\:box-block {
     display: block;
   }
-  .sm\:my-prefix-box-flex {
+  .sm\:box-flex {
     display: flex;
   }
-  .sm\:my-prefix-box-hide {
+  .sm\:box-hide {
     display: none;
   }
-  .sm\:my-prefix-box-show {
+  .sm\:box-show {
     display: inherit;
   }
-  .sm\:my-prefix-text-300 {
+  .sm\:text-300 {
     font-size: 0.8rem;
   }
-  .sm\:my-prefix-text-400 {
+  .sm\:text-400 {
     font-size: 1rem;
   }
-  .sm\:my-prefix-text-500 {
+  .sm\:text-500 {
     font-size: 1.25rem;
   }
-  .sm\:my-prefix-text-600 {
+  .sm\:text-600 {
     font-size: 1.6rem;
   }
-  .sm\:my-prefix-text-700 {
+  .sm\:text-700 {
     font-size: 2rem;
   }
-  .sm\:my-prefix-text-900 {
+  .sm\:text-900 {
     font-size: 3rem;
   }
-  .sm\:my-prefix-width-full {
+  .sm\:width-full {
     width: 100%;
   }
-  .sm\:my-prefix-width-half {
+  .sm\:width-half {
     width: 50%;
   }
-  .sm\:my-prefix-width-quarter {
+  .sm\:width-quarter {
     width: 25%;
   }
-  .sm\:my-prefix-width-third {
+  .sm\:width-third {
     width: 33.3333333333%;
   }
 }
 @media (min-width: 48em) {
-  .md\:my-prefix-box-block {
+  .md\:box-block {
     display: block;
   }
-  .md\:my-prefix-box-flex {
+  .md\:box-flex {
     display: flex;
   }
-  .md\:my-prefix-box-hide {
+  .md\:box-hide {
     display: none;
   }
-  .md\:my-prefix-box-show {
+  .md\:box-show {
     display: inherit;
   }
-  .md\:my-prefix-text-300 {
+  .md\:text-300 {
     font-size: 0.8rem;
   }
-  .md\:my-prefix-text-400 {
+  .md\:text-400 {
     font-size: 1rem;
   }
-  .md\:my-prefix-text-500 {
+  .md\:text-500 {
     font-size: 1.25rem;
   }
-  .md\:my-prefix-text-600 {
+  .md\:text-600 {
     font-size: 1.6rem;
   }
-  .md\:my-prefix-text-700 {
+  .md\:text-700 {
     font-size: 2rem;
   }
-  .md\:my-prefix-text-900 {
+  .md\:text-900 {
     font-size: 3rem;
   }
-  .md\:my-prefix-width-full {
+  .md\:width-full {
     width: 100%;
   }
-  .md\:my-prefix-width-half {
+  .md\:width-half {
     width: 50%;
   }
-  .md\:my-prefix-width-quarter {
+  .md\:width-quarter {
     width: 25%;
   }
-  .md\:my-prefix-width-third {
+  .md\:width-third {
     width: 33.3333333333%;
   }
 }
 @media (min-width: 62em) {
-  .lg\:my-prefix-box-block {
+  .lg\:box-block {
     display: block;
   }
-  .lg\:my-prefix-box-flex {
+  .lg\:box-flex {
     display: flex;
   }
-  .lg\:my-prefix-box-hide {
+  .lg\:box-hide {
     display: none;
   }
-  .lg\:my-prefix-box-show {
+  .lg\:box-show {
     display: inherit;
   }
-  .lg\:my-prefix-text-300 {
+  .lg\:text-300 {
     font-size: 0.8rem;
   }
-  .lg\:my-prefix-text-400 {
+  .lg\:text-400 {
     font-size: 1rem;
   }
-  .lg\:my-prefix-text-500 {
+  .lg\:text-500 {
     font-size: 1.25rem;
   }
-  .lg\:my-prefix-text-600 {
+  .lg\:text-600 {
     font-size: 1.6rem;
   }
-  .lg\:my-prefix-text-700 {
+  .lg\:text-700 {
     font-size: 2rem;
   }
-  .lg\:my-prefix-text-900 {
+  .lg\:text-900 {
     font-size: 3rem;
   }
-  .lg\:my-prefix-width-full {
+  .lg\:width-full {
     width: 100%;
   }
-  .lg\:my-prefix-width-half {
+  .lg\:width-half {
     width: 50%;
   }
-  .lg\:my-prefix-width-quarter {
+  .lg\:width-quarter {
     width: 25%;
   }
-  .lg\:my-prefix-width-third {
+  .lg\:width-third {
     width: 33.3333333333%;
   }
 }
 /* GORKO: auto-generated utility classes end */
 body {
-  font-size: 3rem;
-  color: var(--my-prefix-color-blush);
+  font-size: get-utility-value("text", "900");
 }
 
 /*# sourceMappingURL=test.css.map */
