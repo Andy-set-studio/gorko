@@ -7,7 +7,7 @@
 ///
 @use "sass:meta";
 @use 'process-collection';
-@use "../../default-config";
+@use "../../config";
 
 @mixin cycle($prefix, $is-breakpoint) {
   @each $selector, $props in default-config.$gorko-config {
