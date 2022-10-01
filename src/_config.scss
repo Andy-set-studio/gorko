@@ -1,8 +1,8 @@
 @use "sass:math";
 
 /// Set default feature flags
-$generate-css-vars: true;
-$generate-utility-classes: true;
+$generate-css-vars: true !default;
+$generate-utility-classes: true !default;
 
 /// BASE SIZE
 /// All calculations are based on this. It’s recommended that
