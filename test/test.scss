@@ -1,4 +1,4 @@
-@use "sass:math";
+/// Override the default variables
 @use "../src/variables" as var with (
   $generate-css-vars: true,
   $generate-utility-classes: true,
@@ -10,6 +10,7 @@
   ),
 );
 
+/// Use to override the default config
 @use "override-config";
 @use '../gorko';
 
