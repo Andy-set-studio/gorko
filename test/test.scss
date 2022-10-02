@@ -7,14 +7,5 @@
     'dark': #1a1a1a,
     'light': #f3f3f3,
     'blush': pink
-   ),
-  $light-colors: (
-    'text': map-get(#{$gorko-colors}, 'dark'),
-    'bg': map-get(#{$gorko-colors}, 'light')
-  ),
-
-  $dark-colors: (
-    'text': map-get(#{$gorko-colors}, 'light'),
-    'bg': map-get(#{$gorko-colors}, 'dark')
   )
 );
