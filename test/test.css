@@ -441,7 +441,7 @@
 }
 /* GORKO: auto-generated utility classes end */
 body {
-  font-size: get-utility-value("text", "900");
+  font-size: 3rem;
   color: pink;
 }
 
