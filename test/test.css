@@ -463,9 +463,17 @@
 }
 /* GORKO: auto-generated utility classes end */
 body {
-  font-size: 3rem;
+  font-size: 1.25rem;
   background: pink;
   color: var(--my-prefix-color-blush);
+}
+body h1 {
+  font-size: 3rem;
+}
+@media (min-width: 48em) {
+  body .test-element {
+    background: blue;
+  }
 }
 
 /*# sourceMappingURL=test.css.map */
