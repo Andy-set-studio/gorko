@@ -10,18 +10,6 @@
   ),
 );
 
-@use "../src/config" with (
-  $light-colors: (
-    'text': map-get(var.$gorko-colors, 'dark'),
-    'bg': map-get(var.$gorko-colors, 'light')
-  ),
-
-  $dark-colors: (
-    'text': map-get(var.$gorko-colors, 'light'),
-    'bg': map-get(var.$gorko-colors, 'dark')
-  ),
-);
-
 @use '../gorko';
 
 /// A TESTING GROUND FOR FEATURES. MAKE SURE IT'S CLEAR AFTER HERE BEFORE PUSHING
