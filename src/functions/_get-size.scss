@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../config";
+@use "../variables" as var;
 
 /// GET SIZE FUNCTION
 ///
@@ -9,7 +9,7 @@
 /// @param {string} $ratio-key - The size ratio that you want to get
 ///
 @function get-size($ratio-key) {
-  $response: map.get(default-config.$gorko-size-scale, $ratio-key);
+  $response: map.get(var.$gorko-size-scale, $ratio-key);
 
   @if ($response) {
     @return $response;
