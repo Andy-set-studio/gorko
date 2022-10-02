@@ -1,5 +1,10 @@
 @use '../gorko';
-@use 'override-config' as config;
+@use "../src/config" with (
+  $generate-css-vars: true,
+  $generate-utility-classes: true,
+  $gorko-base-size: 1.5rem
+);
+
 
 /// A TESTING GROUND FOR FEATURES. MAKE SURE IT'S CLEAR AFTER HERE BEFORE PUSHING
 
