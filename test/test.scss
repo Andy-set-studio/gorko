@@ -8,6 +8,9 @@
     'light': #f3f3f3,
     'blush': pink
   ),
+);
+
+@use "../src/config" with (
   $light-colors: (
     'text': map-get(var.$gorko-colors, 'dark'),
     'bg': map-get(var.$gorko-colors, 'light')
