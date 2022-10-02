@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../config";
+@use "../variables" as var;
 
 /// GET COLOR FUNCTION
 /// Function tries to match the passed $key with the $gorko-colors map. Returns null
@@ -8,7 +8,7 @@
 /// @param {string} $key - The color that you want to get
 ///
 @function get-color($key) {
-  $response: map.get(default-config.$gorko-colors, $key);
+  $response: map.get(var.$gorko-colors, $key);
 
   @if ($response) {
     @return $response;
