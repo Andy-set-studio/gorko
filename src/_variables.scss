@@ -29,7 +29,7 @@ $gorko-size-scale: (
   '600': $gorko-base-size * 1.6,
   '700': $gorko-base-size * 2,
   '900': $gorko-base-size * 3
-);
+) !default;
 
 /// COLORS
 /// Colors are shared between backgrounds and text by default.
