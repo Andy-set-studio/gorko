@@ -25,7 +25,7 @@
   /// If this collection is using CSS vars, the items come from the
   /// 'css-vars' map in $gorko-config
   @if ($use-css-vars) {
-    $vars: map.get(default-config.$gorko-config, 'css-vars');
+    $vars: map.get(config.$gorko-config, 'css-vars');
     $vars-key: map.get($collection, 'items');
     $items: map.get($vars, $vars-key);
   }
