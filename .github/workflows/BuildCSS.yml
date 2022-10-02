@@ -2,7 +2,7 @@ name: Build css
 on:
   push:
     branches:
-      - patch-1
+      - @use-refactor-gorko
       
 # Conditional environmental if's      
 env:
