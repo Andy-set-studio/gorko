@@ -22,14 +22,14 @@ $gorko-base-size: 1rem !default;
 /// calcuated off the base size, so change that and cascade across
 /// your whole project.
 ///
-  $gorko-size-scale: (
-    '300': $gorko-base-size * 0.8,
-    '400': $gorko-base-size,
-    '500': $gorko-base-size * 1.25,
-    '600': $gorko-base-size * 1.6,
-    '700': $gorko-base-size * 2,
-    '900': $gorko-base-size * 3
-  ),
+$gorko-size-scale: (
+  '300': $gorko-base-size * 0.8,
+  '400': $gorko-base-size,
+  '500': $gorko-base-size * 1.25,
+  '600': $gorko-base-size * 1.6,
+  '700': $gorko-base-size * 2,
+  '900': $gorko-base-size * 3
+);
 
 /// COLORS
 /// Colors are shared between backgrounds and text by default.
