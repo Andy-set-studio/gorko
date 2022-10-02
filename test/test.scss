@@ -1,5 +1,5 @@
 @use "sass:math";
-@use "../src/config" with (
+@use "../src/variables" with (
   $generate-css-vars: true,
   $generate-utility-classes: true,
   $gorko-base-size: 1rem,
