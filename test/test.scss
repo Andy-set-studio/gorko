@@ -21,9 +21,9 @@ body {
   background: gorko.get-color('blush');
   h1 { font-size: gorko.get-size('900');}
   @include gorko.apply-utility('color', 'blush');
-  .my-element {
+  .test-element {
     @include media-query('md') {
-      background: goldenrod;
+      background: blue;
     }
   }
 }
