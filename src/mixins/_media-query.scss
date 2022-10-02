@@ -9,7 +9,7 @@
 ///
 @mixin media-query($key) {
   $breakpoints: map.get(config.$gorko-config, 'breakpoints');
-  $matched-breakpoint: map.get($breakpoints, $key);
+  $matched-breakpoint: map.get(config.$breakpoints, $key);
 
   @if not $matched-breakpoint {
     @warn #{ 'Breakpoint, ‘' + $key + '’ not found in `$gorko-config`. Make sure it’s set in the ‘breakpoints’ section.' };
