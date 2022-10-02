@@ -2,7 +2,6 @@
 @use 'workers/cycle';
 @use 'workers/generate-css-vars' as cssvars;
 @use '../mixins/generate-utility-classes' as util;
-@use "../config";
 @use "../variables" as var;
 
 $css-vars: map.get(config.$gorko-config, 'css-vars');
