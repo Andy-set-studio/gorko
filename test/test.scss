@@ -17,7 +17,13 @@
 /// A TESTING GROUND FOR FEATURES. MAKE SURE IT'S CLEAR AFTER HERE BEFORE PUSHING
 
 body {
-  font-size: gorko.get-utility-value('text', '900');
+  font-size: gorko.get-utility-value('text', '500');
   background: gorko.get-color('blush');
+  h1 { font-size: gorko.get-size('900');}
   @include gorko.apply-utility('color', 'blush');
+  .my-element {
+    @include media-query('md') {
+      background: goldenrod;
+    }
+  }
 }
