@@ -1,5 +1,5 @@
 @use "sass:math";
-@use "../src/variables" with (
+@use "../src/variables" as var with (
   $generate-css-vars: true,
   $generate-utility-classes: true,
   $gorko-base-size: 1rem,
@@ -9,13 +9,13 @@
     'blush': pink
   ),
   $light-colors: (
-    'text': map-get($gorko-colors, 'dark'),
-    'bg': map-get($gorko-colors, 'light')
+    'text': map-get(var.$gorko-colors, 'dark'),
+    'bg': map-get(var.$gorko-colors, 'light')
   ),
 
   $dark-colors: (
-    'text': map-get($gorko-colors, 'light'),
-    'bg': map-get($gorko-colors, 'dark')
+    'text': map-get(var.$gorko-colors, 'light'),
+    'bg': map-get(var.$gorko-colors, 'dark')
   ),
 );
 
