@@ -2,15 +2,15 @@
 @forward "../src/config" with (
 
 /// Set feature flags
-$generate-css-vars: true,
-$generate-utility-classes: true,
+  $generate-css-vars: true,
+  $generate-utility-classes: true,
 
 /// BASE SIZE
 /// All calculations are based on this. It’s recommended that
 /// you keep it at 1rem because that is the root font size. You
 /// can set it to whatever you like and whatever unit you like.
 ///
-$gorko-base-size: 1rem,
+  $gorko-base-size: 1rem,
 
 
 /// SIZE SCALE
@@ -19,34 +19,34 @@ $gorko-base-size: 1rem,
 /// calcuated off the base size, so change that and cascade across
 /// your whole project.
 ///
-$gorko-size-scale: (
-  '300': $gorko-base-size * 0.8,
-  '400': $gorko-base-size,
-  '500': $gorko-base-size * 1.25,
-  '600': $gorko-base-size * 1.6,
-  '700': $gorko-base-size * 2,
-  '900': $gorko-base-size * 3
-),
+  $gorko-size-scale: (
+    '300': $gorko-base-size * 0.8,
+    '400': $gorko-base-size,
+    '500': $gorko-base-size * 1.25,
+    '600': $gorko-base-size * 1.6,
+    '700': $gorko-base-size * 2,
+    '900': $gorko-base-size * 3
+  ),
 
 /// COLORS
 /// Colors are shared between backgrounds and text by default.
 /// You can also use them to power borders, fills or shadows, for example.
 ///
-$gorko-colors: (
-  'dark': #1a1a1a,
-  'light': #f3f3f3,
-  'blush': pink
-),
+  $gorko-colors: (
+    'dark': #1a1a1a,
+    'light': #f3f3f3,
+    'blush': pink
+  ),
 
-$light-colors: (
-  'text': map-get($gorko-colors, 'dark'),
-  'bg': map-get($gorko-colors, 'light')
-),
+  $light-colors: (
+    'text': map-get($gorko-colors, 'dark'),
+    'bg': map-get($gorko-colors, 'light')
+  ),
 
-$dark-colors: (
-  'text': map-get($gorko-colors, 'light'),
-  'bg': map-get($gorko-colors, 'dark')
-),
+  $dark-colors: (
+    'text': map-get($gorko-colors, 'light'),
+    'bg': map-get($gorko-colors, 'dark')
+  ),
 
 
 /// CORE CONFIG
