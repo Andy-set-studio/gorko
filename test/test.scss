@@ -4,14 +4,3 @@
   $generate-utility-classes: true,
   $gorko-base-size: 1rem
 );
-
-@use "../src/config" with (
-  $gorko-size-scale: (
-    '300': $gorko-base-size * 0.8,
-    '400': $gorko-base-size,
-    '500': $gorko-base-size * 1.25,
-    '600': $gorko-base-size * 1.6,
-    '700': $gorko-base-size * 2,
-    '900': $gorko-base-size * 3
-  )
-);
