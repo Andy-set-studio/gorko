@@ -1,5 +1,5 @@
 @use "sass:math";
-@use "variables";
+@use "variables" as var;
 
 /// CORE CONFIG
 /// This powers everything from utility class generation to breakpoints
@@ -12,12 +12,12 @@ $gorko-config: (
     'css-vars': false,
   ),
   'bg': (
-    'items': $gorko-colors,
+    'items': var.$gorko-colors,
     'output': 'standard',
     'property': 'background'
   ),
   'color': (
-    'items': $gorko-colors,
+    'items': var.$gorko-colors,
     'output': 'standard',
     'property': 'color'
   ),
@@ -39,42 +39,42 @@ $gorko-config: (
     'property': 'font-family'
   ),
   'gap-top': (
-    'items': $gorko-size-scale,
+    'items': var.$gorko-size-scale,
     'output': 'standard',
     'property': 'margin-top'
   ),
   'gap-right': (
-    'items': $gorko-size-scale,
+    'items': var.$gorko-size-scale,
     'output': 'standard',
     'property': 'margin-right'
   ),
   'gap-bottom': (
-    'items': $gorko-size-scale,
+    'items': var.$gorko-size-scale,
     'output': 'standard',
     'property': 'margin-bottom'
   ),
   'gap-left': (
-    'items': $gorko-size-scale,
+    'items': var.$gorko-size-scale,
     'output': 'standard',
     'property': 'margin-left'
   ),
   'pad-top': (
-    'items': $gorko-size-scale,
+    'items': var.$gorko-size-scale,
     'output': 'standard',
     'property': 'padding-top'
   ),
   'pad-right': (
-    'items': $gorko-size-scale,
+    'items': var.$gorko-size-scale,
     'output': 'standard',
     'property': 'padding-right'
   ),
   'pad-bottom': (
-    'items': $gorko-size-scale,
+    'items': var.$gorko-size-scale,
     'output': 'standard',
     'property': 'padding-bottom'
   ),
   'pad-left': (
-    'items': $gorko-size-scale,
+    'items': var.$gorko-size-scale,
     'output': 'standard',
     'property': 'padding-left'
   ),
@@ -90,7 +90,7 @@ $gorko-config: (
     'property': 'z-index'
   ),
   'text': (
-    'items': $gorko-size-scale,
+    'items': var.$gorko-size-scale,
     'output': 'responsive',
     'property': 'font-size'
   ),
