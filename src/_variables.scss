@@ -39,3 +39,13 @@ $gorko-colors: (
   'dark': #1a1a1a,
   'light': #f3f3f3
 ) !default;
+
+$light-colors: (
+  'text': map-get($gorko-colors, 'dark'),
+  'bg': map-get($gorko-colors, 'light')
+) !default;
+
+$dark-colors: (
+  'text': map-get($gorko-colors, 'light'),
+  'bg': map-get($gorko-colors, 'dark')
+) !default;
