@@ -1,0 +1,28 @@
+/// All variables must be defined separately 
+/// to the _config so that they can be overridden
+/// using _override-var and _override-config.
+/// Variables cannot be defined in the _config file 
+/// because when you want to override them sass will 
+/// throw the following error 'undefined variable'.
+
+/// Set default feature flags
+$generate-css-vars: true !default;
+$generate-utility-classes: true !default;
+
+/// BASE SIZE
+/// All calculations are based on this. It’s recommended that
+/// you keep it at 1rem because that is the root font size. You
+/// can set it to whatever you like and whatever unit you like.
+///
+$gorko-base-size: 1rem !default;
+$gorko-size-ratio: !default;
+$gorko-size-scale: !default;
+
+/// COLORS
+/// Colors are shared between backgrounds and text by default.
+/// You can also use them to power borders, fills or shadows, for example.
+///
+$gorko-colors: (
+  'dark': #1a1a1a,
+  'light': #f3f3f3
+) !default;
