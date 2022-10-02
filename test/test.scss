@@ -10,6 +10,7 @@
   ),
 );
 
+@use "override-config";
 @use '../gorko';
 
 /// A TESTING GROUND FOR FEATURES. MAKE SURE IT'S CLEAR AFTER HERE BEFORE PUSHING
