@@ -8,7 +8,7 @@
 /// @param {string} $key - The key of your configured breakpoint
 ///
 @mixin media-query($key) {
-  $breakpoints: map.get(default-config.$gorko-config, 'breakpoints');
+  $breakpoints: map.get(config.$gorko-config, 'breakpoints');
   $matched-breakpoint: map.get($breakpoints, $key);
 
   @if not $matched-breakpoint {
