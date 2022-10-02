@@ -464,6 +464,7 @@
 /* GORKO: auto-generated utility classes end */
 body {
   font-size: 3rem;
+  background: pink;
   color: var(--my-prefix-color-blush);
 }
 
