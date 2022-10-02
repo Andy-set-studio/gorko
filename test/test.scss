@@ -22,7 +22,7 @@ body {
   h1 { font-size: gorko.get-size('900');}
   @include gorko.apply-utility('color', 'blush');
   .test-element {
-    @include media-query('md') {
+    @include gorko.media-query('md') {
       background: blue;
     }
   }
