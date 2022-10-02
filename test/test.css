@@ -7,12 +7,20 @@
   background: #f3f3f3;
 }
 
+.bg-blush {
+  background: pink;
+}
+
 .color-dark {
   color: #1a1a1a;
 }
 
 .color-light {
   color: #f3f3f3;
+}
+
+.color-blush {
+  color: pink;
 }
 
 .box-block {
@@ -434,6 +442,7 @@
 /* GORKO: auto-generated utility classes end */
 body {
   font-size: get-utility-value("text", "900");
+  color: pink;
 }
 
 /*# sourceMappingURL=test.css.map */
