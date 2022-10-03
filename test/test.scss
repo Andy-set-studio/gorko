@@ -1,5 +1,4 @@
 /// Override the default variables
-@use "../src/variables" as v;
 @use "../src/variables" as var with (
   $generate-css-vars: true,
   $generate-utility-classes: true,
@@ -10,12 +9,12 @@
     'blush': pink
   ),
   $gorko-size-scale: (
-    '300': v.$gorko-base-size * 0.7,
-    '400': v.$gorko-base-size,
-    '500': v.$gorko-base-size * 1.3,
-    '600': v.$gorko-base-size * 1.7,
-    '700': v.$gorko-base-size * 2.5,
-    '900': v.$gorko-base-size * 4
+    '300': $gorko-base-size * 0.7,
+    '400': $gorko-base-size,
+    '500': $gorko-base-size * 1.3,
+    '600': $gorko-base-size * 1.7,
+    '700': $gorko-base-size * 2.5,
+    '900': $gorko-base-size * 4
   ),
 );
 
