@@ -66,195 +66,195 @@
 }
 
 .my-prefix-gap-top-300 {
-  margin-top: clamp(0.83rem, 0.77rem + 0.32vw, 1.05rem);
+  margin-top: 0.8rem;
 }
 
 .my-prefix-gap-top-400 {
-  margin-top: clamp(1rem, 0.91rem + 0.46vw, 1.31rem);
+  margin-top: 1rem;
 }
 
 .my-prefix-gap-top-500 {
-  margin-top: clamp(1.2rem, 1.07rem + 0.65vw, 1.64rem);
+  margin-top: 1.25rem;
 }
 
 .my-prefix-gap-top-600 {
-  margin-top: clamp(1.44rem, 1.26rem + 0.9vw, 2.05rem);
+  margin-top: 1.6rem;
 }
 
 .my-prefix-gap-top-700 {
-  margin-top: clamp(1.73rem, 1.48rem + 1.24vw, 2.56rem);
+  margin-top: 2rem;
 }
 
 .my-prefix-gap-top-900 {
-  margin-top: clamp(2.07rem, 1.74rem + 1.68vw, 3.2rem);
+  margin-top: 3rem;
 }
 
 .my-prefix-gap-right-300 {
-  margin-right: clamp(0.83rem, 0.77rem + 0.32vw, 1.05rem);
+  margin-right: 0.8rem;
 }
 
 .my-prefix-gap-right-400 {
-  margin-right: clamp(1rem, 0.91rem + 0.46vw, 1.31rem);
+  margin-right: 1rem;
 }
 
 .my-prefix-gap-right-500 {
-  margin-right: clamp(1.2rem, 1.07rem + 0.65vw, 1.64rem);
+  margin-right: 1.25rem;
 }
 
 .my-prefix-gap-right-600 {
-  margin-right: clamp(1.44rem, 1.26rem + 0.9vw, 2.05rem);
+  margin-right: 1.6rem;
 }
 
 .my-prefix-gap-right-700 {
-  margin-right: clamp(1.73rem, 1.48rem + 1.24vw, 2.56rem);
+  margin-right: 2rem;
 }
 
 .my-prefix-gap-right-900 {
-  margin-right: clamp(2.07rem, 1.74rem + 1.68vw, 3.2rem);
+  margin-right: 3rem;
 }
 
 .my-prefix-gap-bottom-300 {
-  margin-bottom: clamp(0.83rem, 0.77rem + 0.32vw, 1.05rem);
+  margin-bottom: 0.8rem;
 }
 
 .my-prefix-gap-bottom-400 {
-  margin-bottom: clamp(1rem, 0.91rem + 0.46vw, 1.31rem);
+  margin-bottom: 1rem;
 }
 
 .my-prefix-gap-bottom-500 {
-  margin-bottom: clamp(1.2rem, 1.07rem + 0.65vw, 1.64rem);
+  margin-bottom: 1.25rem;
 }
 
 .my-prefix-gap-bottom-600 {
-  margin-bottom: clamp(1.44rem, 1.26rem + 0.9vw, 2.05rem);
+  margin-bottom: 1.6rem;
 }
 
 .my-prefix-gap-bottom-700 {
-  margin-bottom: clamp(1.73rem, 1.48rem + 1.24vw, 2.56rem);
+  margin-bottom: 2rem;
 }
 
 .my-prefix-gap-bottom-900 {
-  margin-bottom: clamp(2.07rem, 1.74rem + 1.68vw, 3.2rem);
+  margin-bottom: 3rem;
 }
 
 .my-prefix-gap-left-300 {
-  margin-left: clamp(0.83rem, 0.77rem + 0.32vw, 1.05rem);
+  margin-left: 0.8rem;
 }
 
 .my-prefix-gap-left-400 {
-  margin-left: clamp(1rem, 0.91rem + 0.46vw, 1.31rem);
+  margin-left: 1rem;
 }
 
 .my-prefix-gap-left-500 {
-  margin-left: clamp(1.2rem, 1.07rem + 0.65vw, 1.64rem);
+  margin-left: 1.25rem;
 }
 
 .my-prefix-gap-left-600 {
-  margin-left: clamp(1.44rem, 1.26rem + 0.9vw, 2.05rem);
+  margin-left: 1.6rem;
 }
 
 .my-prefix-gap-left-700 {
-  margin-left: clamp(1.73rem, 1.48rem + 1.24vw, 2.56rem);
+  margin-left: 2rem;
 }
 
 .my-prefix-gap-left-900 {
-  margin-left: clamp(2.07rem, 1.74rem + 1.68vw, 3.2rem);
+  margin-left: 3rem;
 }
 
 .my-prefix-pad-top-300 {
-  padding-top: clamp(0.83rem, 0.77rem + 0.32vw, 1.05rem);
+  padding-top: 0.8rem;
 }
 
 .my-prefix-pad-top-400 {
-  padding-top: clamp(1rem, 0.91rem + 0.46vw, 1.31rem);
+  padding-top: 1rem;
 }
 
 .my-prefix-pad-top-500 {
-  padding-top: clamp(1.2rem, 1.07rem + 0.65vw, 1.64rem);
+  padding-top: 1.25rem;
 }
 
 .my-prefix-pad-top-600 {
-  padding-top: clamp(1.44rem, 1.26rem + 0.9vw, 2.05rem);
+  padding-top: 1.6rem;
 }
 
 .my-prefix-pad-top-700 {
-  padding-top: clamp(1.73rem, 1.48rem + 1.24vw, 2.56rem);
+  padding-top: 2rem;
 }
 
 .my-prefix-pad-top-900 {
-  padding-top: clamp(2.07rem, 1.74rem + 1.68vw, 3.2rem);
+  padding-top: 3rem;
 }
 
 .my-prefix-pad-right-300 {
-  padding-right: clamp(0.83rem, 0.77rem + 0.32vw, 1.05rem);
+  padding-right: 0.8rem;
 }
 
 .my-prefix-pad-right-400 {
-  padding-right: clamp(1rem, 0.91rem + 0.46vw, 1.31rem);
+  padding-right: 1rem;
 }
 
 .my-prefix-pad-right-500 {
-  padding-right: clamp(1.2rem, 1.07rem + 0.65vw, 1.64rem);
+  padding-right: 1.25rem;
 }
 
 .my-prefix-pad-right-600 {
-  padding-right: clamp(1.44rem, 1.26rem + 0.9vw, 2.05rem);
+  padding-right: 1.6rem;
 }
 
 .my-prefix-pad-right-700 {
-  padding-right: clamp(1.73rem, 1.48rem + 1.24vw, 2.56rem);
+  padding-right: 2rem;
 }
 
 .my-prefix-pad-right-900 {
-  padding-right: clamp(2.07rem, 1.74rem + 1.68vw, 3.2rem);
+  padding-right: 3rem;
 }
 
 .my-prefix-pad-bottom-300 {
-  padding-bottom: clamp(0.83rem, 0.77rem + 0.32vw, 1.05rem);
+  padding-bottom: 0.8rem;
 }
 
 .my-prefix-pad-bottom-400 {
-  padding-bottom: clamp(1rem, 0.91rem + 0.46vw, 1.31rem);
+  padding-bottom: 1rem;
 }
 
 .my-prefix-pad-bottom-500 {
-  padding-bottom: clamp(1.2rem, 1.07rem + 0.65vw, 1.64rem);
+  padding-bottom: 1.25rem;
 }
 
 .my-prefix-pad-bottom-600 {
-  padding-bottom: clamp(1.44rem, 1.26rem + 0.9vw, 2.05rem);
+  padding-bottom: 1.6rem;
 }
 
 .my-prefix-pad-bottom-700 {
-  padding-bottom: clamp(1.73rem, 1.48rem + 1.24vw, 2.56rem);
+  padding-bottom: 2rem;
 }
 
 .my-prefix-pad-bottom-900 {
-  padding-bottom: clamp(2.07rem, 1.74rem + 1.68vw, 3.2rem);
+  padding-bottom: 3rem;
 }
 
 .my-prefix-pad-left-300 {
-  padding-left: clamp(0.83rem, 0.77rem + 0.32vw, 1.05rem);
+  padding-left: 0.8rem;
 }
 
 .my-prefix-pad-left-400 {
-  padding-left: clamp(1rem, 0.91rem + 0.46vw, 1.31rem);
+  padding-left: 1rem;
 }
 
 .my-prefix-pad-left-500 {
-  padding-left: clamp(1.2rem, 1.07rem + 0.65vw, 1.64rem);
+  padding-left: 1.25rem;
 }
 
 .my-prefix-pad-left-600 {
-  padding-left: clamp(1.44rem, 1.26rem + 0.9vw, 2.05rem);
+  padding-left: 1.6rem;
 }
 
 .my-prefix-pad-left-700 {
-  padding-left: clamp(1.73rem, 1.48rem + 1.24vw, 2.56rem);
+  padding-left: 2rem;
 }
 
 .my-prefix-pad-left-900 {
-  padding-left: clamp(2.07rem, 1.74rem + 1.68vw, 3.2rem);
+  padding-left: 3rem;
 }
 
 .my-prefix-stack-300 {
@@ -278,27 +278,27 @@
 }
 
 .my-prefix-text-300 {
-  font-size: clamp(0.83rem, 0.77rem + 0.32vw, 1.05rem);
+  font-size: 0.8rem;
 }
 
 .my-prefix-text-400 {
-  font-size: clamp(1rem, 0.91rem + 0.46vw, 1.31rem);
+  font-size: 1rem;
 }
 
 .my-prefix-text-500 {
-  font-size: clamp(1.2rem, 1.07rem + 0.65vw, 1.64rem);
+  font-size: 1.25rem;
 }
 
 .my-prefix-text-600 {
-  font-size: clamp(1.44rem, 1.26rem + 0.9vw, 2.05rem);
+  font-size: 1.6rem;
 }
 
 .my-prefix-text-700 {
-  font-size: clamp(1.73rem, 1.48rem + 1.24vw, 2.56rem);
+  font-size: 2rem;
 }
 
 .my-prefix-text-900 {
-  font-size: clamp(2.07rem, 1.74rem + 1.68vw, 3.2rem);
+  font-size: 3rem;
 }
 
 .my-prefix-weight-light {
@@ -343,22 +343,22 @@
     display: inherit;
   }
   .sm\:my-prefix-text-300 {
-    font-size: clamp(0.83rem, 0.77rem + 0.32vw, 1.05rem);
+    font-size: 0.8rem;
   }
   .sm\:my-prefix-text-400 {
-    font-size: clamp(1rem, 0.91rem + 0.46vw, 1.31rem);
+    font-size: 1rem;
   }
   .sm\:my-prefix-text-500 {
-    font-size: clamp(1.2rem, 1.07rem + 0.65vw, 1.64rem);
+    font-size: 1.25rem;
   }
   .sm\:my-prefix-text-600 {
-    font-size: clamp(1.44rem, 1.26rem + 0.9vw, 2.05rem);
+    font-size: 1.6rem;
   }
   .sm\:my-prefix-text-700 {
-    font-size: clamp(1.73rem, 1.48rem + 1.24vw, 2.56rem);
+    font-size: 2rem;
   }
   .sm\:my-prefix-text-900 {
-    font-size: clamp(2.07rem, 1.74rem + 1.68vw, 3.2rem);
+    font-size: 3rem;
   }
   .sm\:my-prefix-width-full {
     width: 100%;
@@ -387,22 +387,22 @@
     display: inherit;
   }
   .md\:my-prefix-text-300 {
-    font-size: clamp(0.83rem, 0.77rem + 0.32vw, 1.05rem);
+    font-size: 0.8rem;
   }
   .md\:my-prefix-text-400 {
-    font-size: clamp(1rem, 0.91rem + 0.46vw, 1.31rem);
+    font-size: 1rem;
   }
   .md\:my-prefix-text-500 {
-    font-size: clamp(1.2rem, 1.07rem + 0.65vw, 1.64rem);
+    font-size: 1.25rem;
   }
   .md\:my-prefix-text-600 {
-    font-size: clamp(1.44rem, 1.26rem + 0.9vw, 2.05rem);
+    font-size: 1.6rem;
   }
   .md\:my-prefix-text-700 {
-    font-size: clamp(1.73rem, 1.48rem + 1.24vw, 2.56rem);
+    font-size: 2rem;
   }
   .md\:my-prefix-text-900 {
-    font-size: clamp(2.07rem, 1.74rem + 1.68vw, 3.2rem);
+    font-size: 3rem;
   }
   .md\:my-prefix-width-full {
     width: 100%;
@@ -431,22 +431,22 @@
     display: inherit;
   }
   .lg\:my-prefix-text-300 {
-    font-size: clamp(0.83rem, 0.77rem + 0.32vw, 1.05rem);
+    font-size: 0.8rem;
   }
   .lg\:my-prefix-text-400 {
-    font-size: clamp(1rem, 0.91rem + 0.46vw, 1.31rem);
+    font-size: 1rem;
   }
   .lg\:my-prefix-text-500 {
-    font-size: clamp(1.2rem, 1.07rem + 0.65vw, 1.64rem);
+    font-size: 1.25rem;
   }
   .lg\:my-prefix-text-600 {
-    font-size: clamp(1.44rem, 1.26rem + 0.9vw, 2.05rem);
+    font-size: 1.6rem;
   }
   .lg\:my-prefix-text-700 {
-    font-size: clamp(1.73rem, 1.48rem + 1.24vw, 2.56rem);
+    font-size: 2rem;
   }
   .lg\:my-prefix-text-900 {
-    font-size: clamp(2.07rem, 1.74rem + 1.68vw, 3.2rem);
+    font-size: 3rem;
   }
   .lg\:my-prefix-width-full {
     width: 100%;
@@ -463,12 +463,12 @@
 }
 /* GORKO: auto-generated utility classes end */
 body {
-  font-size: clamp(1.2rem, 1.07rem + 0.65vw, 1.64rem);
+  font-size: 1.25rem;
   background: pink;
   color: var(--my-prefix-color-blush);
 }
 body h1 {
-  font-size: clamp(2.07rem, 1.74rem + 1.68vw, 3.2rem);
+  font-size: 3rem;
 }
 @media (min-width: 48em) {
   body .test-element {
