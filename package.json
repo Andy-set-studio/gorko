@@ -7,20 +7,19 @@
     "sass": "^1.55.0"
   },
   "scripts": {
-    "test": "sass gorko.scss:dist/gorko.css test/test.scss:test/test.css",
-    "migrate": "sass-migrator module --migrate-deps --verbose gorko.scss"
+    "test": "sass test/test.scss:test/test.css",
+    "build": "sass gorko.scss:dist/gorko.css"
   },
   "devDependencies": {
     "prettier": "^2.7.1"
   },
-  "style": "",
-  "sass": "../gorko.scss",
+  "sass": "gorko.scss",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hankchizljaw/gorko.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "hankchizljaw",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hankchizljaw/gorko/issues"
