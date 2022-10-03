@@ -9,12 +9,12 @@
     'blush': pink
   ),
   $gorko-size-scale: (
-    '300': $gorko-base-size * 0.7,
-    '400': $gorko-base-size,
-    '500': $gorko-base-size * 1.3,
-    '600': $gorko-base-size * 1.7,
-    '700': $gorko-base-size * 2.5,
-    '900': $gorko-base-size * 4
+    '300': clamp(0.83rem, calc(0.77rem + 0.32vw), 1.05rem),
+    '400': clamp(1.00rem, calc(0.91rem + 0.46vw), 1.31rem),
+    '500': clamp(1.20rem, calc(1.07rem + 0.65vw), 1.64rem),
+    '600': clamp(1.44rem, calc(1.26rem + 0.90vw), 2.05rem),
+    '700': clamp(1.73rem, calc(1.48rem + 1.24vw), 2.56rem),
+    '900': clamp(2.07rem, calc(1.74rem + 1.68vw), 3.20rem),
   ),
 );
 
