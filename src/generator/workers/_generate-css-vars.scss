@@ -1,4 +1,5 @@
-@import 'process-vars';
+@use 'sass:map';
+@use 'process-vars';
 
 /// GENERATE CSS VARS MIXIN
 /// Will either generate a simple collection of CSS Custom Properties
@@ -9,19 +10,19 @@
 @mixin generate-css-vars($vars) {
   @if ($vars) {
     /// First, we look for themes to see if we need to do extra work
-    $themes: map-get($vars, 'themes');
+    $themes: map.get($vars, 'themes');
 
     /// Still generate the custom properties but remove the themes from the $vars
     /// so we don't confuse the generator
     :root {
-      @include process-vars(map-remove($vars, 'themes'));
+      @include process-vars.process-vars(map.remove($vars, 'themes'));
     }
 
     @if ($themes) {
       @each $name, $theme in $themes {
-        $prefix: map-get($theme, 'prefix');
-        $tokens: map-get($theme, 'tokens');
-        $prefers-color-scheme: map-get($theme, 'prefers-color-scheme');
+        $prefix: map.get($theme, 'prefix');
+        $tokens: map.get($theme, 'tokens');
+        $prefers-color-scheme: map.get($theme, 'prefers-color-scheme');
 
         /// A theme can be defined without a prefix, but we need one to create
         /// a valid CSS rule, so we’ll set it as :root
@@ -33,20 +34,20 @@
         @if ($prefers-color-scheme) {
           @media (prefers-color-scheme: #{$prefers-color-scheme}) {
             #{$prefix} {
-              @include process-vars($tokens);
+              @include process-vars.process-vars($tokens);
             }
           }
         } @else {
           /// If not, we can generate the vars within the prefix only instead
           #{$prefix} {
-            @include process-vars($tokens);
+            @include process-vars.process-vars($tokens);
           }
         }
       }
     } @else {
       /// No themes, so just generate custom properties for each CSS var
       :root {
-        @include process-vars($vars);
+        @include process-vars.process-vars($vars);
       }
     }
   }

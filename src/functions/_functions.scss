@@ -1,3 +1,3 @@
-@import 'get-color';
-@import 'get-size';
-@import 'get-utility-value';
+@forward 'get-color';
+@forward 'get-size';
+@forward 'get-utility-value';

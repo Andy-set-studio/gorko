@@ -5,12 +5,19 @@
 /// @param {string} $prefix - An optional prefix that is stuck to the front of selectors
 /// @param {bool} $is-breakpoint - A flag for the responsive generation to use to determine wether to run or not
 ///
-@import 'process-collection';
+@use 'sass:meta';
+@use 'process-collection';
+@use '../../config';
 
 @mixin cycle($prefix, $is-breakpoint) {
-  @each $selector, $props in $gorko-config {
-    @if(type-of($props) == 'map') {
-      @include process-collection($props, $prefix, $selector, $is-breakpoint);
+  @each $selector, $props in config.$gorko-config {
+    @if (meta.type-of($props) == 'map') {
+      @include process-collection.process-collection(
+        $props,
+        $prefix,
+        $selector,
+        $is-breakpoint
+      );
     }
   }
 }

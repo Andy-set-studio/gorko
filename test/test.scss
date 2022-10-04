@@ -1,11 +1,31 @@
-@import 'config';
+/// Override the default variables
+@use '../src/variables' with (
+  $generate-css-vars: true,
+  $generate-utility-classes: true,
+  $gorko-base-size: 1rem,
+  $gorko-colors: (
+    'dark': #1a1a1a,
+    'light': #f3f3f3,
+    'blush': pink
+  )
+);
 
-@import '../gorko';
+/// Use to override the default config
+@use 'override-config';
+@use '../gorko';
 
 /// A TESTING GROUND FOR FEATURES. MAKE SURE IT'S CLEAR AFTER HERE BEFORE PUSHING
 
 body {
-  font-size: get-utility-value('text', '900');
-  // background: get-config-value('color', 'blush');
-  @include apply-utility('color', 'blush');
+  font-size: gorko.get-utility-value('text', '500');
+  background: gorko.get-color('blush');
+  h1 {
+    font-size: gorko.get-size('900');
+  }
+  @include gorko.apply-utility('color', 'blush');
+  .test-element {
+    @include gorko.media-query('md') {
+      background: blue;
+    }
+  }
 }

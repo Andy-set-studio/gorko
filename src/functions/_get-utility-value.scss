@@ -1,4 +1,5 @@
-@import '../generator/workers/get-config-value';
+@use 'sass:map';
+@use '../generator/workers/get-config-value';
 
 /// GET UTILITY VALUE FUNCTION
 /// Grab the value of one of the $gorko-config utilities
@@ -8,10 +9,10 @@
 /// @param {string} $value-key - The value key that you are looking for within the utilty
 ///
 @function get-utility-value($key, $value-key) {
-  $values: get-config-value($key, $value-key);
+  $values: get-config-value.get-config-value($key, $value-key);
 
   @if ($values) {
-    @return map-get($values, 'value');
+    @return map.get($values, 'value');
   } @else {
     @return null;
   }

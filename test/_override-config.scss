@@ -1,0 +1,146 @@
+@use 'sass:math';
+@use '../src/variables' as var;
+@forward '../src/config' with (
+  /// CORE CONFIG
+  /// This powers everything from utility class generation to breakpoints
+  /// to enabling/disabling pre-built components/utilities.
+  ///
+  $gorko-config: (
+    'namespace': (
+      'prefix': 'my-prefix-',
+      'classes': true,
+      'css-vars': true
+    ),
+    'css-vars': (
+      'color': var.$gorko-colors,
+      'themes': (
+        'default': (
+          'tokens': (
+            'color': var.$light-colors
+          )
+        ),
+        'dark': (
+          'prefers-color-scheme': 'dark',
+          'tokens': (
+            'color': var.$dark-colors
+          )
+        ),
+        'dark-toggle': (
+          'prefix': '[data-theme="dark"]',
+          'tokens': (
+            'color': var.$dark-colors
+          )
+        )
+      )
+    ),
+    'bg': (
+      'items': 'color',
+      'css-vars': true,
+      'output': 'standard',
+      'property': 'background-color'
+    ),
+    'color': (
+      'items': 'color',
+      'css-vars': true,
+      'output': 'standard',
+      'property': 'color'
+    ),
+    'box': (
+      'items': (
+        'block': 'block',
+        'flex': 'flex',
+        'hide': 'none',
+        'show': 'inherit'
+      ),
+      'output': 'responsive',
+      'property': 'display'
+    ),
+    'font': (
+      'items': (
+        'base': 'Helvetica, Arial, sans-serif'
+      ),
+      'output': 'standard',
+      'property': 'font-family'
+    ),
+    'gap-top': (
+      'items': var.$gorko-size-scale,
+      'output': 'standard',
+      'property': 'margin-top'
+    ),
+    'gap-right': (
+      'items': var.$gorko-size-scale,
+      'output': 'standard',
+      'property': 'margin-right'
+    ),
+    'gap-bottom': (
+      'items': var.$gorko-size-scale,
+      'output': 'standard',
+      'property': 'margin-bottom'
+    ),
+    'gap-left': (
+      'items': var.$gorko-size-scale,
+      'output': 'standard',
+      'property': 'margin-left'
+    ),
+    'pad-top': (
+      'items': var.$gorko-size-scale,
+      'output': 'standard',
+      'property': 'padding-top'
+    ),
+    'pad-right': (
+      'items': var.$gorko-size-scale,
+      'output': 'standard',
+      'property': 'padding-right'
+    ),
+    'pad-bottom': (
+      'items': var.$gorko-size-scale,
+      'output': 'standard',
+      'property': 'padding-bottom'
+    ),
+    'pad-left': (
+      'items': var.$gorko-size-scale,
+      'output': 'standard',
+      'property': 'padding-left'
+    ),
+    'stack': (
+      'items': (
+        '300': 0,
+        '400': 10,
+        '500': 20,
+        '600': 30,
+        '700': 40
+      ),
+      'output': 'standard',
+      'property': 'z-index'
+    ),
+    'text': (
+      'items': var.$gorko-size-scale,
+      'output': 'responsive',
+      'property': 'font-size'
+    ),
+    'weight': (
+      'items': (
+        'light': '300',
+        'regular': '400',
+        'bold': '700'
+      ),
+      'output': 'standard',
+      'property': 'font-weight'
+    ),
+    'width': (
+      'items': (
+        'full': '100%',
+        'half': math.percentage(calc(1 / 2)),
+        'quarter': math.percentage(calc(1 / 4)),
+        'third': math.percentage(calc(1 / 3))
+      ),
+      'output': 'responsive',
+      'property': 'width'
+    ),
+    'breakpoints': (
+      'sm': '(min-width: 36em)',
+      'md': '(min-width: 48em)',
+      'lg': '(min-width: 62em)'
+    )
+  )
+);

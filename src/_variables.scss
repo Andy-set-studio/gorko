@@ -1,0 +1,51 @@
+/// All variables must be defined separately
+/// to the _config so that they can be overridden
+/// using the _override-vars and/or _override-config.
+/// Variables cannot be defined and then used in the _config file
+/// because when you want to override them sass will
+/// throw the 'undefined variable' error.
+
+/// Set default feature flags
+$generate-css-vars: true !default;
+$generate-utility-classes: true !default;
+
+/// BASE SIZE
+/// All calculations are based on this. It’s recommended that
+/// you keep it at 1rem because that is the root font size. You
+/// can set it to whatever you like and whatever unit you like.
+///
+$gorko-base-size: 1rem !default;
+
+// SIZE SCALE
+/// This is a Major Third scale that powers all the utilities that
+/// it is relevant for (font-size, margin, padding). All items are
+/// calcuated off the base size, so change that and cascade across
+/// your whole project.
+///
+$gorko-size-scale: (
+  '300': $gorko-base-size * 0.8,
+  '400': $gorko-base-size,
+  '500': $gorko-base-size * 1.25,
+  '600': $gorko-base-size * 1.6,
+  '700': $gorko-base-size * 2,
+  '900': $gorko-base-size * 3
+) !default;
+
+/// COLORS
+/// Colors are shared between backgrounds and text by default.
+/// You can also use them to power borders, fills or shadows, for example.
+///
+$gorko-colors: (
+  'dark': #1a1a1a,
+  'light': #f3f3f3
+) !default;
+
+$light-colors: (
+  'text': map-get($gorko-colors, 'dark'),
+  'bg': map-get($gorko-colors, 'light')
+) !default;
+
+$dark-colors: (
+  'text': map-get($gorko-colors, 'light'),
+  'bg': map-get($gorko-colors, 'dark')
+) !default;

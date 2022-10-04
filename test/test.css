@@ -1,0 +1,479 @@
+:root {
+  --my-prefix-color-dark: #1a1a1a;
+  --my-prefix-color-light: #f3f3f3;
+  --my-prefix-color-blush: pink;
+}
+
+:root {
+  --my-prefix-color-text: #1a1a1a;
+  --my-prefix-color-bg: #f3f3f3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --my-prefix-color-text: #f3f3f3;
+    --my-prefix-color-bg: #1a1a1a;
+  }
+}
+[data-theme=dark] {
+  --my-prefix-color-text: #f3f3f3;
+  --my-prefix-color-bg: #1a1a1a;
+}
+
+/* GORKO: auto-generated utility classes start */
+.my-prefix-bg-dark {
+  background-color: var(--my-prefix-color-dark);
+}
+
+.my-prefix-bg-light {
+  background-color: var(--my-prefix-color-light);
+}
+
+.my-prefix-bg-blush {
+  background-color: var(--my-prefix-color-blush);
+}
+
+.my-prefix-color-dark {
+  color: var(--my-prefix-color-dark);
+}
+
+.my-prefix-color-light {
+  color: var(--my-prefix-color-light);
+}
+
+.my-prefix-color-blush {
+  color: var(--my-prefix-color-blush);
+}
+
+.my-prefix-box-block {
+  display: block;
+}
+
+.my-prefix-box-flex {
+  display: flex;
+}
+
+.my-prefix-box-hide {
+  display: none;
+}
+
+.my-prefix-box-show {
+  display: inherit;
+}
+
+.my-prefix-font-base {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.my-prefix-gap-top-300 {
+  margin-top: 0.8rem;
+}
+
+.my-prefix-gap-top-400 {
+  margin-top: 1rem;
+}
+
+.my-prefix-gap-top-500 {
+  margin-top: 1.25rem;
+}
+
+.my-prefix-gap-top-600 {
+  margin-top: 1.6rem;
+}
+
+.my-prefix-gap-top-700 {
+  margin-top: 2rem;
+}
+
+.my-prefix-gap-top-900 {
+  margin-top: 3rem;
+}
+
+.my-prefix-gap-right-300 {
+  margin-right: 0.8rem;
+}
+
+.my-prefix-gap-right-400 {
+  margin-right: 1rem;
+}
+
+.my-prefix-gap-right-500 {
+  margin-right: 1.25rem;
+}
+
+.my-prefix-gap-right-600 {
+  margin-right: 1.6rem;
+}
+
+.my-prefix-gap-right-700 {
+  margin-right: 2rem;
+}
+
+.my-prefix-gap-right-900 {
+  margin-right: 3rem;
+}
+
+.my-prefix-gap-bottom-300 {
+  margin-bottom: 0.8rem;
+}
+
+.my-prefix-gap-bottom-400 {
+  margin-bottom: 1rem;
+}
+
+.my-prefix-gap-bottom-500 {
+  margin-bottom: 1.25rem;
+}
+
+.my-prefix-gap-bottom-600 {
+  margin-bottom: 1.6rem;
+}
+
+.my-prefix-gap-bottom-700 {
+  margin-bottom: 2rem;
+}
+
+.my-prefix-gap-bottom-900 {
+  margin-bottom: 3rem;
+}
+
+.my-prefix-gap-left-300 {
+  margin-left: 0.8rem;
+}
+
+.my-prefix-gap-left-400 {
+  margin-left: 1rem;
+}
+
+.my-prefix-gap-left-500 {
+  margin-left: 1.25rem;
+}
+
+.my-prefix-gap-left-600 {
+  margin-left: 1.6rem;
+}
+
+.my-prefix-gap-left-700 {
+  margin-left: 2rem;
+}
+
+.my-prefix-gap-left-900 {
+  margin-left: 3rem;
+}
+
+.my-prefix-pad-top-300 {
+  padding-top: 0.8rem;
+}
+
+.my-prefix-pad-top-400 {
+  padding-top: 1rem;
+}
+
+.my-prefix-pad-top-500 {
+  padding-top: 1.25rem;
+}
+
+.my-prefix-pad-top-600 {
+  padding-top: 1.6rem;
+}
+
+.my-prefix-pad-top-700 {
+  padding-top: 2rem;
+}
+
+.my-prefix-pad-top-900 {
+  padding-top: 3rem;
+}
+
+.my-prefix-pad-right-300 {
+  padding-right: 0.8rem;
+}
+
+.my-prefix-pad-right-400 {
+  padding-right: 1rem;
+}
+
+.my-prefix-pad-right-500 {
+  padding-right: 1.25rem;
+}
+
+.my-prefix-pad-right-600 {
+  padding-right: 1.6rem;
+}
+
+.my-prefix-pad-right-700 {
+  padding-right: 2rem;
+}
+
+.my-prefix-pad-right-900 {
+  padding-right: 3rem;
+}
+
+.my-prefix-pad-bottom-300 {
+  padding-bottom: 0.8rem;
+}
+
+.my-prefix-pad-bottom-400 {
+  padding-bottom: 1rem;
+}
+
+.my-prefix-pad-bottom-500 {
+  padding-bottom: 1.25rem;
+}
+
+.my-prefix-pad-bottom-600 {
+  padding-bottom: 1.6rem;
+}
+
+.my-prefix-pad-bottom-700 {
+  padding-bottom: 2rem;
+}
+
+.my-prefix-pad-bottom-900 {
+  padding-bottom: 3rem;
+}
+
+.my-prefix-pad-left-300 {
+  padding-left: 0.8rem;
+}
+
+.my-prefix-pad-left-400 {
+  padding-left: 1rem;
+}
+
+.my-prefix-pad-left-500 {
+  padding-left: 1.25rem;
+}
+
+.my-prefix-pad-left-600 {
+  padding-left: 1.6rem;
+}
+
+.my-prefix-pad-left-700 {
+  padding-left: 2rem;
+}
+
+.my-prefix-pad-left-900 {
+  padding-left: 3rem;
+}
+
+.my-prefix-stack-300 {
+  z-index: 0;
+}
+
+.my-prefix-stack-400 {
+  z-index: 10;
+}
+
+.my-prefix-stack-500 {
+  z-index: 20;
+}
+
+.my-prefix-stack-600 {
+  z-index: 30;
+}
+
+.my-prefix-stack-700 {
+  z-index: 40;
+}
+
+.my-prefix-text-300 {
+  font-size: 0.8rem;
+}
+
+.my-prefix-text-400 {
+  font-size: 1rem;
+}
+
+.my-prefix-text-500 {
+  font-size: 1.25rem;
+}
+
+.my-prefix-text-600 {
+  font-size: 1.6rem;
+}
+
+.my-prefix-text-700 {
+  font-size: 2rem;
+}
+
+.my-prefix-text-900 {
+  font-size: 3rem;
+}
+
+.my-prefix-weight-light {
+  font-weight: 300;
+}
+
+.my-prefix-weight-regular {
+  font-weight: 400;
+}
+
+.my-prefix-weight-bold {
+  font-weight: 700;
+}
+
+.my-prefix-width-full {
+  width: 100%;
+}
+
+.my-prefix-width-half {
+  width: 50%;
+}
+
+.my-prefix-width-quarter {
+  width: 25%;
+}
+
+.my-prefix-width-third {
+  width: 33.3333333333%;
+}
+
+@media (min-width: 36em) {
+  .sm\:my-prefix-box-block {
+    display: block;
+  }
+  .sm\:my-prefix-box-flex {
+    display: flex;
+  }
+  .sm\:my-prefix-box-hide {
+    display: none;
+  }
+  .sm\:my-prefix-box-show {
+    display: inherit;
+  }
+  .sm\:my-prefix-text-300 {
+    font-size: 0.8rem;
+  }
+  .sm\:my-prefix-text-400 {
+    font-size: 1rem;
+  }
+  .sm\:my-prefix-text-500 {
+    font-size: 1.25rem;
+  }
+  .sm\:my-prefix-text-600 {
+    font-size: 1.6rem;
+  }
+  .sm\:my-prefix-text-700 {
+    font-size: 2rem;
+  }
+  .sm\:my-prefix-text-900 {
+    font-size: 3rem;
+  }
+  .sm\:my-prefix-width-full {
+    width: 100%;
+  }
+  .sm\:my-prefix-width-half {
+    width: 50%;
+  }
+  .sm\:my-prefix-width-quarter {
+    width: 25%;
+  }
+  .sm\:my-prefix-width-third {
+    width: 33.3333333333%;
+  }
+}
+@media (min-width: 48em) {
+  .md\:my-prefix-box-block {
+    display: block;
+  }
+  .md\:my-prefix-box-flex {
+    display: flex;
+  }
+  .md\:my-prefix-box-hide {
+    display: none;
+  }
+  .md\:my-prefix-box-show {
+    display: inherit;
+  }
+  .md\:my-prefix-text-300 {
+    font-size: 0.8rem;
+  }
+  .md\:my-prefix-text-400 {
+    font-size: 1rem;
+  }
+  .md\:my-prefix-text-500 {
+    font-size: 1.25rem;
+  }
+  .md\:my-prefix-text-600 {
+    font-size: 1.6rem;
+  }
+  .md\:my-prefix-text-700 {
+    font-size: 2rem;
+  }
+  .md\:my-prefix-text-900 {
+    font-size: 3rem;
+  }
+  .md\:my-prefix-width-full {
+    width: 100%;
+  }
+  .md\:my-prefix-width-half {
+    width: 50%;
+  }
+  .md\:my-prefix-width-quarter {
+    width: 25%;
+  }
+  .md\:my-prefix-width-third {
+    width: 33.3333333333%;
+  }
+}
+@media (min-width: 62em) {
+  .lg\:my-prefix-box-block {
+    display: block;
+  }
+  .lg\:my-prefix-box-flex {
+    display: flex;
+  }
+  .lg\:my-prefix-box-hide {
+    display: none;
+  }
+  .lg\:my-prefix-box-show {
+    display: inherit;
+  }
+  .lg\:my-prefix-text-300 {
+    font-size: 0.8rem;
+  }
+  .lg\:my-prefix-text-400 {
+    font-size: 1rem;
+  }
+  .lg\:my-prefix-text-500 {
+    font-size: 1.25rem;
+  }
+  .lg\:my-prefix-text-600 {
+    font-size: 1.6rem;
+  }
+  .lg\:my-prefix-text-700 {
+    font-size: 2rem;
+  }
+  .lg\:my-prefix-text-900 {
+    font-size: 3rem;
+  }
+  .lg\:my-prefix-width-full {
+    width: 100%;
+  }
+  .lg\:my-prefix-width-half {
+    width: 50%;
+  }
+  .lg\:my-prefix-width-quarter {
+    width: 25%;
+  }
+  .lg\:my-prefix-width-third {
+    width: 33.3333333333%;
+  }
+}
+/* GORKO: auto-generated utility classes end */
+body {
+  font-size: 1.25rem;
+  background: pink;
+  color: var(--my-prefix-color-blush);
+}
+body h1 {
+  font-size: 3rem;
+}
+@media (min-width: 48em) {
+  body .test-element {
+    background: blue;
+  }
+}
+
+/*# sourceMappingURL=test.css.map */

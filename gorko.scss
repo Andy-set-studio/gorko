@@ -1,17 +1,7 @@
-/// Import the default config as the fallback for if
-/// the user hasn't yet set a config for their project
-@import './src/default-config';
+/// Import the config for the user to
+/// override with config variables for their project
+@forward 'src/config';
 
-/// Set default feature flags
-$generate-css-vars: true !default;
-$generate-utility-classes: true !default;
-
-// Support old features
-@if (variable-exists(outputTokenCSS)) {
-  @warn '$outputTokenCSS is deprecated. Please use $generate-utility-classes instead';
-  $generate-utility-classes: $outputTokenCSS;
-}
-
-@import './src/functions/functions';
-@import './src/mixins/mixins';
-@import './src/generator/generator';
+@forward 'src/functions/functions';
+@forward 'src/mixins/mixins';
+@forward 'src/generator/generator';

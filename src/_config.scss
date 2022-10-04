@@ -1,33 +1,5 @@
-/// BASE SIZE
-/// All calculations are based on this. It’s recommended that
-/// you keep it at 1rem because that is the root font size. You
-/// can set it to whatever you like and whatever unit you like.
-///
-$gorko-base-size: 1rem !default;
-
-/// SIZE SCALE
-/// This is a Major Third scale that powers all the utilities that
-/// it is relevant for (font-size, margin, padding). All items are
-/// calcuated off the base size, so change that and cascade across
-/// your whole project.
-///
-$gorko-size-scale: (
-  '300': $gorko-base-size * 0.8,
-  '400': $gorko-base-size,
-  '500': $gorko-base-size * 1.25,
-  '600': $gorko-base-size * 1.6,
-  '700': $gorko-base-size * 2,
-  '900': $gorko-base-size * 3
-) !default;
-
-/// COLORS
-/// Colors are shared between backgrounds and text by default.
-/// You can also use them to power borders, fills or shadows, for example.
-///
-$gorko-colors: (
-  'dark': #1a1a1a,
-  'light': #f3f3f3
-) !default;
+@use 'sass:math';
+@use 'variables' as var;
 
 /// CORE CONFIG
 /// This powers everything from utility class generation to breakpoints
@@ -37,15 +9,15 @@ $gorko-config: (
   'namespace': (
     'prefix': '',
     'classes': true,
-    'css-vars': false,
+    'css-vars': false
   ),
   'bg': (
-    'items': $gorko-colors,
+    'items': var.$gorko-colors,
     'output': 'standard',
     'property': 'background'
   ),
   'color': (
-    'items': $gorko-colors,
+    'items': var.$gorko-colors,
     'output': 'standard',
     'property': 'color'
   ),
@@ -67,42 +39,42 @@ $gorko-config: (
     'property': 'font-family'
   ),
   'gap-top': (
-    'items': $gorko-size-scale,
+    'items': var.$gorko-size-scale,
     'output': 'standard',
     'property': 'margin-top'
   ),
   'gap-right': (
-    'items': $gorko-size-scale,
+    'items': var.$gorko-size-scale,
     'output': 'standard',
     'property': 'margin-right'
   ),
   'gap-bottom': (
-    'items': $gorko-size-scale,
+    'items': var.$gorko-size-scale,
     'output': 'standard',
     'property': 'margin-bottom'
   ),
   'gap-left': (
-    'items': $gorko-size-scale,
+    'items': var.$gorko-size-scale,
     'output': 'standard',
     'property': 'margin-left'
   ),
   'pad-top': (
-    'items': $gorko-size-scale,
+    'items': var.$gorko-size-scale,
     'output': 'standard',
     'property': 'padding-top'
   ),
   'pad-right': (
-    'items': $gorko-size-scale,
+    'items': var.$gorko-size-scale,
     'output': 'standard',
     'property': 'padding-right'
   ),
   'pad-bottom': (
-    'items': $gorko-size-scale,
+    'items': var.$gorko-size-scale,
     'output': 'standard',
     'property': 'padding-bottom'
   ),
   'pad-left': (
-    'items': $gorko-size-scale,
+    'items': var.$gorko-size-scale,
     'output': 'standard',
     'property': 'padding-left'
   ),
@@ -118,7 +90,7 @@ $gorko-config: (
     'property': 'z-index'
   ),
   'text': (
-    'items': $gorko-size-scale,
+    'items': var.$gorko-size-scale,
     'output': 'responsive',
     'property': 'font-size'
   ),
@@ -134,9 +106,9 @@ $gorko-config: (
   'width': (
     'items': (
       'full': '100%',
-      'half': percentage(1/2),
-      'quarter': percentage(1/4),
-      'third': percentage(1/3)
+      'half': math.percentage(calc(1 / 2)),
+      'quarter': math.percentage(calc(1 / 4)),
+      'third': math.percentage(calc(1 / 3))
     ),
     'output': 'responsive',
     'property': 'width'

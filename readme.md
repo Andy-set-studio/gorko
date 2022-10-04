@@ -50,20 +50,68 @@ npm install gorko
 In your Sass (SCSS in this case), import Gorko like so:
 
 ```scss
-@import '../path/to/your/node_modules/gorko/gorko.scss';
+@use '../path/to/your/node_modules/gorko/gorko.scss';
 ```
 
-This will generate utility classes based on the default configuration. To configure it for yourself, take this default, and create your own. Once it is created **import your config before Gorko**, like this:
-
-```bash
-@import 'config';
-```
-
-## Configuration
-
-This is the default configuration. It is recommended that you use it as your base for your own configuration.
+This will generate utility classes based on the default variables and defaukt configuration. To configure it for yourself, copy variables.scss and config.scss, and create your own override-config.scss and/or override-vars.scss. Once it is created **use your override-config and override-vars before Gorko**, like this:
 
 ```scss
+@use 'override-vars';
+@use 'override-config';
+@use '../path/to/your/node_modules/gorko/gorko.scss';
+```
+
+Next within the override-config file you must @forward the config.scss file from node and use the 'with' syntax to override it, like this:
+
+```scss
+@use 'sass:math';
+@use '..path/to/your/node_modules/gorko/src/variables' as var;
+@forward '..path/to/your/node_modules/gorko/src/config' with (
+ 
+  $gorko-config: (
+    'namespace': (
+      'prefix': 'my-prefix-',
+      'classes': true,
+      'css-vars': true
+    ),
+    'css-vars': (
+      'color': var.$gorko-colors,
+      'themes': (
+        'default': (
+          'tokens': (
+            'color': var.$light-colors
+          )
+        ),
+```
+Notice that for sass variables you must reference the variables file, for example `var.$gorko-colors`.
+
+If you don't want to create seperate override files you can override the default variables and/or the default config from your main scss file, like so:
+
+```scss
+/// Override the default variables
+@use '../src/variables' with (
+  $generate-css-vars: true,
+  $generate-utility-classes: true,
+  $gorko-base-size: 1rem,
+  $gorko-colors: (
+    'dark': #1a1a1a,
+    'light': #f3f3f3,
+    'blush': pink
+  )
+);
+```
+
+Check out the test/test.scss and test/override-config.scss files for an example setup. See [sass.lang](https://sass-lang.com/documentation/) for more information about `@use` and `@forward`.
+
+## Variables and Configuration
+
+This is the default variables and configuration. It is recommended that you use it as your base for your own configuration.
+
+```scss
+// ===========================================
+// _variables.scss
+// ===========================================
+
 /// BASE SIZE
 /// All calculations are based on this. It’s recommended that
 /// you keep it at 1rem because that is the root font size. You
@@ -94,6 +142,20 @@ $gorko-colors: (
   'dark': #1a1a1a,
   'light': #f3f3f3
 );
+
+$light-colors: (
+  'text': map-get($gorko-colors, 'dark'),
+  'bg': map-get($gorko-colors, 'light')
+) !default;
+
+$dark-colors: (
+  'text': map-get($gorko-colors, 'light'),
+  'bg': map-get($gorko-colors, 'dark')
+) !default;
+
+// ============================================
+// _config.scss
+// ============================================
 
 /// CORE CONFIG
 /// This powers everything from utility class generation to breakpoints
@@ -523,60 +585,68 @@ You can generate as many themes with whatever prefix you can think up!
 You could also [generate color utility classes using the generator](#utility-class-generator) that use these custom properties.
 
 ## Namespaces
-Gorko supports 'namespacing' both the generated class and variable names by allowing you to specify a prefix.  This is done using the `namespace` map within `$gorko-config`.  The default `namespace` config looks like this:
 
-````scss
+Gorko supports 'namespacing' both the generated class and variable names by allowing you to specify a prefix. This is done using the `namespace` map within `$gorko-config`. The default `namespace` config looks like this:
+
+```scss
 $gorko-config: (
   'namespace': (
-    'prefix': '',             // string
-    'classes': true,          // boolean or string
-    'css-vars': false         // boolean or string
+    'prefix': '',
+    // string
+    'classes': true,
+    // boolean or string
+    'css-vars': false // boolean or string
   )
-)
-````
+);
+```
+
 ### Namespace Settings
+
 #### prefix
-Specifying a value for `prefix` will append that value to classes (by default) and css variables (opt-in).  You are responsible for appending any separating character, such as a dash or underscore. For example, if your namespace is `my-app-`, you need to add the trailing `-` character in the `'prefix'` section.
+
+Specifying a value for `prefix` will append that value to classes (by default) and css variables (opt-in). You are responsible for appending any separating character, such as a dash or underscore. For example, if your namespace is `my-app-`, you need to add the trailing `-` character in the `'prefix'` section.
 
 #### classes
+
 Accepts either a boolean value indicating that the `prefix` should be applied to generated utility classes OR a string, which allows you to override the global `prefix`
 
 #### css-vars
+
 Accepts either a boolean value indicating that the `prefix` should be applied to css-vars OR a string, which allows you to override the global `prefix`
 
 ### Examples
 
 Minimal Configuration: This configuration would prepend `my-` to the beginning of generated utility classes, but would not modify css variable names:
 
-````scss
+```scss
 $gorko-config: (
   'namespace': (
     'prefix': 'my-'
   )
-)
-````
+);
+```
 
-Everything prefixed:  This configuration applies the prefix to both utility classes and css variables:
+Everything prefixed: This configuration applies the prefix to both utility classes and css variables:
 
-````scss
+```scss
 $gorko-config: (
   'namespace': (
     'prefix': 'my-',
     'css-vars': true
   )
-)
-````
+);
+```
 
-Separate prefixes:  This configuration gives you the ability to provide different prefixes for utility classes and css variables:
+Separate prefixes: This configuration gives you the ability to provide different prefixes for utility classes and css variables:
 
-````scss
+```scss
 $gorko-config: (
   'namespace': (
     'classes': 'my-class-',
     'css-vars': 'my-var-'
   )
-)
-````
+);
+```
 
 ## Sass functions
 

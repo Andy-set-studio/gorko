@@ -1,35 +1,38 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use '../../config';
+
 /// Grab the property and value of one of the $gorko-config utilities
 /// that the generator will generate a class for.
 ///
 /// @param {string} $namespace-type - Which type of object needs namespaced.  One of 'classes' or 'vars'
 ///
 @function get-namespace($namespace-type) {
+  $namespace-defaults: (
+    'prefix': '',
+    'classes': true,
+    'css-vars': false
+  );
 
-    $namespace-defaults: (
-        'prefix': '',
-        'classes': true,
-        'css-vars': false
-    );
+  $namespace-settings: map.get(config.$gorko-config, 'namespace');
 
-    $namespace-settings: map-get($gorko-config, 'namespace');
-    
-    @if($namespace-settings == null){
-        @return '';
-    }
+  @if ($namespace-settings == null) {
+    @return '';
+  }
 
-    $namespace-settings-merged: map-merge($namespace-defaults, $namespace-settings);
-    $prefix: map-get($namespace-settings-merged, 'prefix');
+  $namespace-settings-merged: map.merge($namespace-defaults, $namespace-settings);
+  $prefix: map.get($namespace-settings-merged, 'prefix');
 
-    $should-display-prefix: map-get($namespace-settings-merged, $namespace-type);
+  $should-display-prefix: map.get($namespace-settings-merged, $namespace-type);
 
-    $is-setting-boolean: type-of($should-display-prefix) == bool;
-    @if($should-display-prefix and $is-setting-boolean) {
-        // If the specified setting is boolean true, return the global prefix
-        @return $prefix;
-    } @else if($should-display-prefix and $is-setting-boolean == false){
-        // If the specified setting is something other than a boolean, use that as the prefix for this setting
-        @return $should-display-prefix;
-    } @else {
-        @return '';
-    }
+  $is-setting-boolean: meta.type-of($should-display-prefix) == bool;
+  @if ($should-display-prefix and $is-setting-boolean) {
+    // If the specified setting is boolean true, return the global prefix
+    @return $prefix;
+  } @else if($should-display-prefix and $is-setting-boolean == false) {
+    // If the specified setting is something other than a boolean, use that as the prefix for this setting
+    @return $should-display-prefix;
+  } @else {
+    @return '';
+  }
 }

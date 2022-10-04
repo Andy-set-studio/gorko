@@ -1,4 +1,6 @@
-@import '../generator/workers/cycle';
+@use 'sass:map';
+@use '../generator/workers/cycle';
+@use '../config';
 
 /// GENERATE UTILITY CLASSES MIXIN
 /// Runs the utility class generator on demand
@@ -7,15 +9,15 @@
   /* GORKO: auto-generated utility classes start */
 
   /// Run the standard cycle first
-  @include cycle('', false);
+  @include cycle.cycle('', false);
 
   /// For each breakpoint, generate a prefix and run the cycle
-  @each $key, $value in map-get($gorko-config, 'breakpoints') {
+  @each $key, $value in map.get(config.$gorko-config, 'breakpoints') {
     $prefix: #{$key + '\\:'};
     $is-breakpoint: true;
 
     @media #{$value} {
-      @include cycle($prefix, $is-breakpoint);
+      @include cycle.cycle($prefix, $is-breakpoint);
     }
   }
 
