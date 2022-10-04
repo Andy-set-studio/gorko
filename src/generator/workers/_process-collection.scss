@@ -8,10 +8,10 @@
 /// @param {string} $selector - The CSS selector that should be generated
 /// @param {bool} $is-breakpoint - A flag for the responsive generation to use to determine wether to run or not
 ///
-@use "sass:map";
+@use 'sass:map';
 @use 'generate-css';
 @use 'get-namespace';
-@use "../../config";
+@use '../../config';
 
 @mixin process-collection($collection, $prefix, $selector, $is-breakpoint) {
   $items: map.get($collection, 'items');
@@ -33,7 +33,6 @@
   /// It'll only run if $items and $property aren't null. This means it'll ignore the breakpoints and design tokens, for example.
   @if ($property and $items) {
     @if ($output == 'responsive') {
-
       @include generate-css.generate-css(
         #{$prefix + $selector},
         $property,
