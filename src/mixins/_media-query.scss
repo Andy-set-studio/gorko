@@ -1,5 +1,5 @@
-@use "sass:map";
-@use "../config";
+@use 'sass:map';
+@use '../config';
 
 /// MEDIA QUERY MIXIN
 /// Pass in the key of one of your breakpoints set in `$gorko-config['breakpoints']`
