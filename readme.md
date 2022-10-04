@@ -55,7 +55,7 @@ In your Sass (SCSS in this case), import Gorko like so:
 
 This will generate utility classes based on the default variables and defaukt configuration. To configure it for yourself, copy variables.scss and config.scss, and create your own override-config.scss and/or override-vars.scss. Once it is created **use your override-config and override-vars before Gorko**, like this:
 
-```bash
+```scss
 @use 'override-vars';
 @use 'override-config';
 @use '../path/to/your/node_modules/gorko/gorko.scss';
@@ -63,7 +63,7 @@ This will generate utility classes based on the default variables and defaukt co
 
 Next within the override-config file you must @forward the config.scss file from node and use the 'with' syntax to override it, like this:
 
-```bash
+```scss
 @use 'sass:math';
 @use '..path/to/your/node_modules/gorko/src/variables' as var;
 @forward '..path/to/your/node_modules/gorko/src/config' with (
@@ -87,30 +87,21 @@ Notice that for sass variables you must reference the variables file, for exampl
 
 If you don't want to create seperate override files you can override the default variables and/or the default config from your main scss file, like so:
 
-```bash
-@use 'sass:math';
-@forward '..path/to/your/node_modules/gorko/src/variables' as var with (
-
-;
-@forward '..path/to/your/node_modules/gorko/src/config' with (
- 
-  $gorko-config: (
-    'namespace': (
-      'prefix': 'my-prefix-',
-      'classes': true,
-      'css-vars': true
-    ),
-    'css-vars': (
-      'color': var.$gorko-colors,
-      'themes': (
-        'default': (
-          'tokens': (
-            'color': var.$light-colors
-          )
-        ),
+```scss
+/// Override the default variables
+@use '../src/variables' with (
+  $generate-css-vars: true,
+  $generate-utility-classes: true,
+  $gorko-base-size: 1rem,
+  $gorko-colors: (
+    'dark': #1a1a1a,
+    'light': #f3f3f3,
+    'blush': pink
+  )
+);
 ```
 
-See [sass.lang](https://sass-lang.com/documentation/) for more information about `@use` and `@forward`.
+Check out the test/test.scss and test/override-config.scss files for an example setup. See [sass.lang](https://sass-lang.com/documentation/) for more information about `@use` and `@forward`.
 
 ## Variables and Configuration
 
