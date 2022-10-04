@@ -1,9 +1,9 @@
 /// All variables must be defined separately
 /// to the _config so that they can be overridden
-/// using _override-var and _override-config.
-/// Variables cannot be defined in the _config file
+/// using the _override-vars and/or _override-config.
+/// Variables cannot be defined and then used in the _config file
 /// because when you want to override them sass will
-/// throw the following error 'undefined variable'.
+/// throw the 'undefined variable' error.
 
 /// Set default feature flags
 $generate-css-vars: true !default;
