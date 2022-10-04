@@ -50,20 +50,77 @@ npm install gorko
 In your Sass (SCSS in this case), import Gorko like so:
 
 ```scss
-@import '../path/to/your/node_modules/gorko/gorko.scss';
+@use '../path/to/your/node_modules/gorko/gorko.scss';
 ```
 
-This will generate utility classes based on the default configuration. To configure it for yourself, take this default, and create your own. Once it is created **import your config before Gorko**, like this:
+This will generate utility classes based on the default variables and defaukt configuration. To configure it for yourself, copy variables.scss and config.scss, and create your own override-config.scss and/or override-vars.scss. Once it is created **use your override-config and override-vars before Gorko**, like this:
 
 ```bash
-@import 'config';
+@use 'override-vars';
+@use 'override-config';
+@use '../path/to/your/node_modules/gorko/gorko.scss';
 ```
 
-## Configuration
+Next within the override-config file you must @forward the config.scss file from node and use the 'with' syntax to override it, like this:
 
-This is the default configuration. It is recommended that you use it as your base for your own configuration.
+```bash
+@use 'sass:math';
+@use '..path/to/your/node_modules/gorko/src/variables' as var;
+@forward '..path/to/your/node_modules/gorko/src/config' with (
+ 
+  $gorko-config: (
+    'namespace': (
+      'prefix': 'my-prefix-',
+      'classes': true,
+      'css-vars': true
+    ),
+    'css-vars': (
+      'color': var.$gorko-colors,
+      'themes': (
+        'default': (
+          'tokens': (
+            'color': var.$light-colors
+          )
+        ),
+```
+Notice that for sass variables you must reference the variables file, for example `var.$gorko-colors`.
+
+If you don't want to create seperate override files you can override the default variables and/or the default config from your main scss file, like so:
+
+```bash
+@use 'sass:math';
+@forward '..path/to/your/node_modules/gorko/src/variables' as var with (
+
+;
+@forward '..path/to/your/node_modules/gorko/src/config' with (
+ 
+  $gorko-config: (
+    'namespace': (
+      'prefix': 'my-prefix-',
+      'classes': true,
+      'css-vars': true
+    ),
+    'css-vars': (
+      'color': var.$gorko-colors,
+      'themes': (
+        'default': (
+          'tokens': (
+            'color': var.$light-colors
+          )
+        ),
+```
+
+See [sass.lang](https://sass-lang.com/documentation/) for more information about `@use` and `@forward`.
+
+## Variables and Configuration
+
+This is the default variables and configuration. It is recommended that you use it as your base for your own configuration.
 
 ```scss
+// ===========================================
+// _variables.scss
+// ===========================================
+
 /// BASE SIZE
 /// All calculations are based on this. It’s recommended that
 /// you keep it at 1rem because that is the root font size. You
@@ -94,6 +151,20 @@ $gorko-colors: (
   'dark': #1a1a1a,
   'light': #f3f3f3
 );
+
+$light-colors: (
+  'text': map-get($gorko-colors, 'dark'),
+  'bg': map-get($gorko-colors, 'light')
+) !default;
+
+$dark-colors: (
+  'text': map-get($gorko-colors, 'light'),
+  'bg': map-get($gorko-colors, 'dark')
+) !default;
+
+// ============================================
+// _config.scss
+// ============================================
 
 /// CORE CONFIG
 /// This powers everything from utility class generation to breakpoints
