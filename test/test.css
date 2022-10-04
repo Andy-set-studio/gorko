@@ -15,7 +15,7 @@
     --my-prefix-color-bg: #1a1a1a;
   }
 }
-[data-theme='dark'] {
+[data-theme=dark] {
   --my-prefix-color-text: #f3f3f3;
   --my-prefix-color-bg: #1a1a1a;
 }
