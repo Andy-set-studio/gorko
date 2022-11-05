@@ -4,13 +4,13 @@
   "description": "A tiny Sass token class generator.",
   "main": "gorko.scss",
   "dependencies": {
-    "sass": "^1.26.5"
+    "sass": "^1.56.0"
   },
   "scripts": {
     "test": "npx sass gorko.scss tmp/gorko.css && npx sass test/test.scss tmp/test.css"
   },
   "devDependencies": {
-    "prettier": "^2.0.5"
+    "prettier": "^2.7.1"
   },
   "repository": {
     "type": "git",
