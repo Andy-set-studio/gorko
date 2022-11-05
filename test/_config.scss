@@ -1,8 +1,11 @@
+@use "sass:math";
+
 /// BASE SIZE
 /// All calculations are based on this. It’s recommended that
 /// you keep it at 1rem because that is the root font size. You
 /// can set it to whatever you like and whatever unit you like.
 ///
+
 $gorko-base-size: 1rem;
 
 /// SIZE SCALE
@@ -170,9 +173,9 @@ $gorko-config: (
   'width': (
     'items': (
       'full': '100%',
-      'half': percentage(1/2),
-      'quarter': percentage(1/4),
-      'third': percentage(1/3)
+      'half': percentage(1*0.5),
+      'quarter': percentage(1*0.25),
+      'third': percentage(math.div(1, 3))
     ),
     'output': 'responsive',
     'property': 'width'
