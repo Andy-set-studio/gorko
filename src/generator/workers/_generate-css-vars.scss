@@ -43,11 +43,6 @@
           }
         }
       }
-    } @else {
-      /// No themes, so just generate custom properties for each CSS var
-      :root {
-        @include process-vars($vars);
-      }
     }
   }
 }
